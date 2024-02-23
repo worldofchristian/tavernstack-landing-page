@@ -108,11 +108,11 @@ const Pricing = () => {
             
             <div className="flex items-center justify-center mt-40">
                 <div className="max-w-sm">
-                    <h1 className="text-5xl font-bold text-center"
+                    <h1 className="text-4xl lg:text-5xl font-bold text-center"
                     >Get started
                     </h1>
 
-                    <p className="text-lg text-center mt-5"
+                    <p className="text-lg lg:text-xl text-center mt-5"
                     >We&apos;ll get you set up for free. Upgrade whenever you&apos;re ready
                     </p>
                 </div>

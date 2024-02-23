@@ -16,7 +16,7 @@ const DemoAbout = () => {
             <div className="h-16 w-full bg-base-300 rounded-3xl">
                 <div className="flex justify-between items-center mx-auto p-4">
                     <HiMenuAlt2
-                    className="text-3xl cursor-pointer" 
+                    className="text-2xl cursor-pointer" 
                     />
 
                     <button
@@ -32,7 +32,7 @@ const DemoAbout = () => {
                         <div className='flex items-center justify-center'>
                             <div className='max-w-2xl'>
                                 <div className="flex flex-col items-center">
-                                    <h1 className="text-3xl font-bold mb-5 mt-10 text-center"
+                                    <h1 className="text-2xl font-bold mb-5 mt-10 text-center"
                                     >Asteroid Cheeseburger
                                     </h1>
 

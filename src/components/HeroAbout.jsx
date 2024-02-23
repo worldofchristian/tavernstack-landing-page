@@ -69,11 +69,11 @@ const HeroAbout = () => {
                             />
 
                             <h1 
-                            className="text-5xl lg:text-6xl mb-10 font-bold text-center"
+                            className="text-4xl lg:text-6xl mb-10 font-bold text-center"
                             >A website platform for bars & restaurants
                             </h1>
 
-                            <p className='text-lg lg:text-xl mb-5 lg:mb-10 mx-2 text-center'
+                            <p className='text-lg lg:text-xl mb-5 lg:mb-10 mx-8 text-center'
                             >Get a high end solution with minimal set up 
                             </p>
                         </div>
@@ -188,10 +188,10 @@ const HeroAbout = () => {
                         </div>
                     </div>
 
-                    <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-20 mt-40'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-20 mt-40 p-5'>
                         <div className='flex flex-col justify-center max-w-md mb-20'>
                             <div className='flex flex-row gap-10 justify-left items-center'>
-                                <FaCheck className='text-2xl' />
+                                <FaCheck className='text-xl' />
 
                                 <div className='flex flex-col'>
                                     <h1 className='text-2xl font-bold text-left'
@@ -205,7 +205,7 @@ const HeroAbout = () => {
                             </div>
 
                             <div className='flex flex-row gap-10 mt-10 justify-left items-center'>
-                                <FaCheck className='text-2xl' />
+                                <FaCheck className='text-xl' />
                                 
                                 <div className='flex flex-col'>
                                     <h1 className='text-2xl font-bold text-left'
@@ -235,10 +235,10 @@ const HeroAbout = () => {
                         </div>
                     </div>
 
-                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-20'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 p-5'>
                         <div className='flex flex-col justify-center max-w-md mb-10'>
                             <div className='flex flex-row gap-10 justify-left items-center'>
-                                <FaCheck className='text-2xl' />
+                                <FaCheck className='text-xl' />
 
                                 <div className='flex flex-col'>
                                     <h1 className='text-2xl font-bold text-left'
@@ -252,7 +252,7 @@ const HeroAbout = () => {
                             </div>
 
                             <div className='flex flex-row gap-10 mt-16 justify-left items-center'>
-                                <FaCheck className='text-2xl' />
+                                <FaCheck className='text-xl' />
                                 
                                 <div className='flex flex-col'>
                                     <h1 className='text-2xl font-bold text-left'
