@@ -112,7 +112,7 @@ const Pricing = () => {
                     >Get started
                     </h1>
 
-                    <p className="text-lg lg:text-xl text-center mt-5"
+                    <p className="text-lg lg:text-xl text-center mt-5 mx-8"
                     >We&apos;ll get you set up for free. Upgrade whenever you&apos;re ready
                     </p>
                 </div>
