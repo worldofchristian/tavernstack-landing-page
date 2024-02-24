@@ -1,13 +1,23 @@
+import { useEffect, useState } from 'react';
 import asteroid from '../assets/asteroid.jpg';
 import { IoPawSharp } from "react-icons/io5";
-import { FaChild } from "react-icons/fa";
+import { FaAngleDoubleUp, FaChild } from "react-icons/fa";
 import { IoIosSunny } from "react-icons/io";
 import { HiMenuAlt2 } from 'react-icons/hi';
 
 const DemoAbout = () => {
+    const [isCateringOpen, setIsCateringOpen] = useState(false);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsCateringOpen(!isCateringOpen);
+        }, 1800);
+        return () => clearInterval(interval);
+    }, [isCateringOpen]);
+
     return (
     <>
-    <div className="mockup-browser border-slate-600 bg-base-300 max-w-md rounded-3xl">
+    <div className="mockup-browser border-slate-600 bg-base-300 h-[620px] max-w-md rounded-3xl">
         <div className="mockup-browser-toolbar">
             <div className="input">https://asteroid.tavernstack.com</div>
         </div>
@@ -21,10 +31,56 @@ const DemoAbout = () => {
 
                     <button
                     className="btn btn-primary rounded-2xl"
+                    onClick={() => {setIsCateringOpen(true);}}
                     >Book
                     </button>
                 </div>
             </div>
+
+            { isCateringOpen && (
+            <div className='flex items-center justify-center z-10 bg-base-300'>
+                <div className='flex flex-col mt-12'>
+                    <div className='max-w-sm'>
+                        <div className='flex flex-col'>
+                            <p className='text-md mb-1 ml-1'
+                            >Email</p>
+
+                            <input 
+                            className='input input-bordered'
+                            placeholder='Type here'
+                            />
+
+                            <p className='text-md mb-1 ml-1 mt-4'
+                            >Message</p>
+
+                            <textarea
+                            className='textarea textarea-bordered' 
+                            placeholder='Type here'
+                            />
+
+                            <div className="flex items-center justify-end">
+                                <div className="max-w-xs">
+                                    <button 
+                                    className='btn btn-primary rounded-2xl mt-2'
+                                    >Send
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='flex items-center justify-center mt-20 mb-16'>
+                            <p className='text-xl font-bold cursor-pointer tracking-wide'
+                            onClick={() => {
+                                setIsCateringOpen(false);
+                            }}
+                            >Close</p>
+
+                            <FaAngleDoubleUp className='ml-2 cursor-pointer' />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            )}
 
             <div className="flex justify-center items-center">
                 <div className='flex flex-col'>

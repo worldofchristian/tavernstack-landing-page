@@ -52,7 +52,6 @@ const HeroAbout = () => {
     }
     };
 
-
     return (
     <>
     <div className='flex items-center justify-center'>

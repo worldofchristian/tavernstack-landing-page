@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.progress-ring__circle {
-    transition: 0.35s stroke-dashoffset;
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
+.progress-bar {
+    height: 7px;
+    border-radius: 10px; 
+    background-color: #bbbbbb;
 }

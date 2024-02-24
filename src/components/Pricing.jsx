@@ -72,10 +72,6 @@ const Pricing = () => {
                             >Cancel anytime
                             </p>
                         </div>
-
-                        <button className="btn btn-outline bt-sm lg:btn-md rounded-full mt-6"
-                        >Sign up
-                        </button>
                     </div>
                 </div>
                 
@@ -98,10 +94,6 @@ const Pricing = () => {
                             >$30 domain credit
                             </p>
                         </div>
-
-                        <button className="btn btn-outline bt-sm lg:btn-md rounded-full w-full mt-6"
-                        >Sign up
-                        </button>
                     </div>
                 </div>
             </div>
@@ -124,7 +116,8 @@ const Pricing = () => {
                     className="label">
                         <span 
                         className="label-text"
-                        >Email</span>
+                        >Email
+                        </span>
                     </label>
 
                     <input

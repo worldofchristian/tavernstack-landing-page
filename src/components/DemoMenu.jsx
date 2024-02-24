@@ -1,15 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaAngleRight, FaLeaf } from 'react-icons/fa';
 import cupcake from '../assets/cupcake.jpg';
 
 const DemoMenu = () => {
     const [activeCategory, setActiveCategory] = useState('Cupcakes');
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveCategory(prevCategory => prevCategory === 'Cupcakes' ? 'Ice Cream' : 'Cupcakes');
+        }, 1800);
+        return () => clearInterval(interval);
+    }, []);
+
     const menuItems = [
         {
             category: 'Cupcakes',
             items: [
             { name: 'Chocolate', image: cupcake, description: '', price: '$6.99' },
+            { name: 'Vanilla', description: '', price: '$5.99' },
+            { name: 'Red Velvet', description: '', price: '$6.99' },
             ],
         },
         {
@@ -17,6 +26,8 @@ const DemoMenu = () => {
             items: [
             { name: 'Rocky Road', description: '', price: '$5.99' },
             { name: 'Chocolate Fudge', vegan: true, description: '', price: '$4.99' },
+            { name: 'Vanilla Bean', description: '', price: '$4.99' },
+            { name: 'Strawberry Swirl', description: '', price: '$5.99' },
             ],
         },
     ];
@@ -69,18 +80,18 @@ const DemoMenu = () => {
 
                     {category.items.map((item, index) => (
                     <>
-                    <div className='max-w-xs'>
+                    <div className='max-w-[270px]'>
                         <div className='flex items-center justify-center'>
                             <img
                             src={item.image}
-                            className='w-3/6 rounded-3xl'
+                            className='w-2/6 rounded-3xl'
                             />
                         </div>
                     </div>
 
                     <div 
                     key={index} 
-                    className="flex my-4 items-center justify-between gap-32">
+                    className="flex my-2 items-center justify-between gap-14">
                         <div className='flex flex-row'>
                             <h3 
                             className="text-md"
