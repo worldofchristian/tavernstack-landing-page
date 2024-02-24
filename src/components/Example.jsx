@@ -36,7 +36,7 @@ const Example = () => {
           ></lottie-player>
           
           <h1 
-          className="text-4xl lg:text-6xl font-extrabold leading-none text-center"
+          className="text-4xl lg:text-5xl font-extrabold leading-none text-center"
           >Try it out</h1>
 
           <p 
@@ -49,7 +49,7 @@ const Example = () => {
           rel='noreferrer'
           >
             <button 
-            className="px-8 py-3 text-lg lg:text-xl lg:btn-lg font-semibold rounded-full bg-gray-100 text-gray-900"
+            className="px-8 py-3 text-lg font-semibold rounded-full bg-gray-100 text-gray-900"
             >View demo</button>
           </a>
         </div>

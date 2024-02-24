@@ -73,13 +73,13 @@ const HeroAbout = () => {
                             >A website platform for bars & restaurants
                             </h1>
 
-                            <p className='text-lg lg:text-xl mb-5 lg:mb-10 mx-8 text-center'
+                            <p className='text-lg lg:text-xl mb-5 lg:mb-10 mx-10 text-center'
                             >Get a high end solution with minimal set up 
                             </p>
                         </div>
                     </div>
 
-                    <div className='flex items-center justify-center mb-24'>
+                    <div className='flex items-center justify-center mb-32'>
                         <div className='max-w-xs text-center mx-auto'>
                             <div className='flex flex-col'>
                                 <div className='flex items-center justify-center'>
@@ -162,7 +162,7 @@ const HeroAbout = () => {
                                     >What is Tavernstack?
                                     </p>
                                     <div className='flex items-center justify-center'>
-                                        <div className="absolute top-1/2 h-[220px] border-[7px] border-base-300 rounded-full"></div>
+                                        <div className="absolute top-1/2 h-[220px] border-[4px] border-base-300 rounded-full"></div>
                                     </div>
                                 </div>
 
@@ -174,7 +174,7 @@ const HeroAbout = () => {
                             
                                 <div className="relative">
                                     <div className='flex items-center justify-center mt-16'>
-                                        <div className="absolute top-1/2 h-[220px] border-[7px] border-base-300 rounded-full"></div>
+                                        <div className="absolute top-1/2 h-[220px] border-[4px] border-base-300 rounded-full"></div>
                                     </div>
                                 </div>
 
