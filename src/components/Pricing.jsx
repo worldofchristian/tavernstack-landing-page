@@ -24,7 +24,7 @@ const Pricing = () => {
 
   return (
     <>
-    <div className='flex items-center justify-center p-2 my-40'>
+    <div className='flex items-center justify-center p-2 mb-40'>
         <div className='max-w-6xl'>
             <div className="flex items-center justify-center">
                 <div className="flex flex-col max-w-xs">
@@ -91,8 +91,8 @@ const Pricing = () => {
                             target="_blank"
                             rel="noreferrer"
                             >
-                                <button className="btn lg:btn-lg btn-primary rounded-full mt-5"
-                                >Get started <FaAngleDoubleRight />
+                                <button className="btn btn-primary rounded-full mt-5"
+                                >Create account <FaAngleDoubleRight />
                                 </button>
                             </a>
                         </div>

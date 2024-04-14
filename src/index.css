@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Built Titling';
+    src: url('./fonts/built-titling-sb.otf') format('opentype');
+}
+
+.boldtheme {
+    font-family: 'Built Titling', sans-serif;
+    color: black;
+}
+
 .progress-bar {
     height: 7px;
     border-radius: 10px; 
