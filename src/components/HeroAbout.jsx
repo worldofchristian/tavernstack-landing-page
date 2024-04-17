@@ -101,20 +101,20 @@ const HeroAbout = () => {
                     <div className='flex items-center justify-center mt-20 mb-32'>
                         <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-center'>
                             <div className='flex flex-col'>
-                                <div className='flex flex-row items-center justify-end rounded-full lg:max-w-[470px] p-5'>
-                                    <p className='text-lg lg:text-xl lg:font-medium mr-3 lg:mr-5'
+                                <div className='flex flex-row items-center justify-start rounded-full lg:max-w-[470px] p-5'>
+                                    <HiOutlineDocumentAdd className='text-2xl lg:text-4xl text-secondary' />
+                                    
+                                    <p className='text-lg lg:text-xl lg:font-medium ml-3 lg:ml-5'
                                     >Customizable pages
                                     </p>
-                                    
-                                    <HiOutlineDocumentAdd className='text-2xl lg:text-4xl text-secondary' />
                                 </div>
 
-                                <div className='flex flex-row lg:mt-5 justify-end items-center rounded-full lg:max-w-[470px] p-5'>
-                                    <p className='text-lg lg:text-xl lg:font-medium mr-3 lg:mr-5'
-                                    >Add a home page and features section
-                                    </p>
+                                <div className='flex flex-row lg:mt-5 justify-start items-center rounded-full lg:max-w-[470px] p-5'>
+                                    <SiApplearcade className='text-2xl lg:text-4xl text-secondary' /> 
                                     
-                                    <SiApplearcade className='text-2xl lg:text-4xl text-secondary' />                                 
+                                    <p className='text-lg lg:text-xl lg:font-medium ml-3 lg:ml-5'
+                                    >Add a home page and features section
+                                    </p>                                
                                 </div>
                             </div>
                             
@@ -127,20 +127,20 @@ const HeroAbout = () => {
                     <div className='flex items-center justify-center mt-20 mb-32'>
                         <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-center'>
                             <div className='flex flex-col'>
-                                <div className='flex flex-row mt-5 items-center justify-end rounded-full lg:max-w-[470px] p-5'>
-                                    <p className='text-lg lg:text-xl lg:font-medium mr-3 lg:mr-5'
+                                <div className='flex flex-row mt-5 items-center justify-start rounded-full lg:max-w-[470px] p-5'>
+                                    <IoMdSend className='text-2xl lg:text-4xl text-secondary' />
+                                    
+                                    <p className='text-lg lg:text-xl lg:font-medium ml-3 lg:ml-5'
                                     >Get inquiries sent to your email
                                     </p>
-                                    
-                                    <IoMdSend className='text-2xl lg:text-4xl text-secondary' />
                                 </div>
 
-                                <div className='flex flex-row lg:mt-5 items-center justify-end rounded-full lg:max-w-[470px] p-5'>
-                                    <p className='text-lg lg:text-xl lg:font-medium tracking-tight mr-3 lg:mr-5'
-                                    >Or use the link to your bookings service
-                                    </p>
-                                    
+                                <div className='flex flex-row lg:mt-5 items-center justify-start rounded-full lg:max-w-[470px] p-5'>
                                     <FaLink className='text-2xl lg:text-4xl text-secondary' />
+                                    
+                                    <p className='text-lg lg:text-xl lg:font-medium tracking-tight ml-3 lg:ml-5'
+                                    >Or add the link to your bookings service
+                                    </p>
                                 </div>
                             </div>
                             

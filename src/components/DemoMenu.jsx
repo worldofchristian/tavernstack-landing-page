@@ -4,7 +4,7 @@ import tastyburger from '../assets/tastyburger.jpg';
 const DemoMenu = () => {
     return (
     <>
-    <div className="mockup-browser border-slate-600 bg-base-300 h-[620px] max-w-[350px] md:max-w-sm lg:max-w-lg rounded-3xl">
+    <div className="mockup-browser border-slate-600 bg-base-300 h-[530px] max-w-[350px] md:max-w-sm lg:max-w-lg rounded-3xl">
         <div className="mockup-browser-toolbar">
             <div className="input">https://asteroid.tavernstack.com</div>
         </div>
@@ -32,19 +32,15 @@ const DemoMenu = () => {
 
                         <div className='flex items-center justify-center'>
                             <div className='flex flex-col'>
-                                <div className='flex flex-row mt-5 gap-5 items-center justify-center'>
+                                <div className='flex flex-row mt-5 gap-3 items-center justify-center'>
                                     <FaPlus />
                                     
                                     <p className='text-md text-center'
                                     >Add fries & can of pop - $4.95
                                     </p>
                                 </div>
-
-                                <p className='text-md  mt-4 text-center'
-                                >Your choice of lettuce, tomato, onion, pickles, mustard, burger sauce
-                                </p>
                                 
-                                <div className='grid grid-cols-2 gap-5 mt-10 items-center'>
+                                <div className='grid grid-cols-2 gap-5 mt-6 items-center'>
                                     <p className='text-lg font-medium text-left'
                                     >Classic Burger
                                     </p>
