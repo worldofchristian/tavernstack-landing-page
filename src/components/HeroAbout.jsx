@@ -1,6 +1,4 @@
-import { FaAngleDoubleRight, FaLink } from 'react-icons/fa';
-import { HiOutlineDocumentAdd } from "react-icons/hi";
-import { SiApplearcade } from "react-icons/si";
+import { FaPalette } from 'react-icons/fa';
 import { IoMdSend } from "react-icons/io";
 import DemoAbout from './DemoAbout';
 import ackblue from '../assets/ackblue.png';
@@ -12,7 +10,6 @@ const HeroAbout = () => {
     <>
     <div className='flex items-center justify-center'>
         <div className='w-full'>
-            
             <div className='flex items-center justify-center'>
                 <section className='w-full'>
                     <div className='flex items-center justify-center'>
@@ -24,41 +21,23 @@ const HeroAbout = () => {
                             />
 
                             <h1 
-                            className="text-4xl lg:text-6xl mb-10 font-bold text-center"
-                            >A website builder for bars and small vendors
+                            className="text-4xl lg:text-6xl font-bold text-center"
+                            >A website builder for
+                            <span className='gradient-text'> bars and restaurants</span>
                             </h1>
                         </div>
-                    </div>
-
-                    <div className='flex items-center justify-center mb-24'>
-                        <div className='max-w-xs text-center mx-auto'>
-                            <div className='flex flex-col'>
-                                <div className='flex items-center justify-center'>
-                                    <a
-                                    href='https://app.tavernstack.com'
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    >
-                                        <button
-                                        className='btn btn-neutral rounded-full justify-center'
-                                        >Create account<FaAngleDoubleRight />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>                   
                     </div>
                 </section>
             </div>
 
-            <div className='flex item-center justify-center mb-12'>
+            <div className='flex item-center justify-center mt-20 mb-12'>
                 <div className='flex flex-col'>
                     <div className='flex items-center justify-center'>
                         <div className='max-w-xs'>
                             <div className="flex flex-col items-center">
                                 <div className="relative">
                                     <p className="mb-24 text-center text-lg lg:text-xl pl-0 ml-0"
-                                    >Create a digital menu with photos, icons, and themes
+                                    >Create a digital menu with photos, icons, and tabbed navigation
                                     </p>
                                     <div className='flex items-center justify-center'>
                                         <div className="absolute top-1/2 h-[120px] border-[4px] border-base-300 rounded-full"></div>
@@ -68,7 +47,7 @@ const HeroAbout = () => {
                         </div>
                     </div>
 
-                    <div className='flex items-center justify-center mt-20 mb-32'>
+                    <div className='flex items-center justify-center my-20'>
                         <DemoMenu />
                     </div>
 
@@ -98,53 +77,50 @@ const HeroAbout = () => {
                     </div>
                     */}
 
-                    <div className='flex items-center justify-center mt-20 mb-32'>
-                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-center'>
-                            <div className='flex flex-col'>
-                                <div className='flex flex-row items-center justify-start rounded-full lg:max-w-[470px] p-5'>
-                                    <HiOutlineDocumentAdd className='text-2xl lg:text-4xl text-secondary' />
+                    <div className='flex items-center justify-center my-20'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-center justify-center'>
+                            <div className='flex flex-col text-center'>
+                                <div className='flex flex-row gap-2 justify-center items-center rounded-full lg:max-w-[470px] p-4'>
+                                    <FaPalette className='text-2xl lg:text-3xl text-secondary' />
                                     
-                                    <p className='text-lg lg:text-xl lg:font-medium ml-3 lg:ml-5'
-                                    >Customizable pages
-                                    </p>
+                                    <h2 className='text-2xl lg:text-3xl font-bold mt-2'
+                                    >Design-free
+                                    </h2>
                                 </div>
-
-                                <div className='flex flex-row lg:mt-5 justify-start items-center rounded-full lg:max-w-[470px] p-5'>
-                                    <SiApplearcade className='text-2xl lg:text-4xl text-secondary' /> 
-                                    
-                                    <p className='text-lg lg:text-xl lg:font-medium ml-3 lg:ml-5'
-                                    >Add a home page and features section
-                                    </p>                                
-                                </div>
+                                
+                                <div className='flex items-center justify-center'>
+                                    <p className='text-lg  lg:text-xl lg:font-medium w-72'
+                                    >Your site grows automatically as you fill out your profile
+                                    </p>  
+                                </div>                              
                             </div>
                             
-                            <div className='flex items-center justify-center'>
+                            <div className='flex z-1 items-center justify-center'>
                                 <DemoAbout />
                             </div>
                         </div>
                     </div>
 
-                    <div className='flex items-center justify-center mt-20 mb-32'>
-                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-center'>
-                            <div className='flex flex-col'>
-                                <div className='flex flex-row mt-5 items-center justify-start rounded-full lg:max-w-[470px] p-5'>
-                                    <IoMdSend className='text-2xl lg:text-4xl text-secondary' />
+                    <div className='flex items-center justify-center my-20'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-center justify-center'>
+                            <div className='flex flex-col text-center'>
+                                <div className='flex flex-row gap-2 justify-center items-center rounded-full lg:max-w-[470px] p-4'>
+                                    <IoMdSend className='text-2xl lg:text-3xl text-secondary' />
                                     
-                                    <p className='text-lg lg:text-xl lg:font-medium ml-3 lg:ml-5'
-                                    >Get inquiries sent to your email
-                                    </p>
+                                    <h2 className='text-2xl lg:text-3xl font-bold mt-2'
+                                    >User actions
+                                    </h2>
                                 </div>
-
-                                <div className='flex flex-row lg:mt-5 items-center justify-start rounded-full lg:max-w-[470px] p-5'>
-                                    <FaLink className='text-2xl lg:text-4xl text-secondary' />
-                                    
-                                    <p className='text-lg lg:text-xl lg:font-medium tracking-tight ml-3 lg:ml-5'
-                                    >Or add the link to your bookings service
-                                    </p>
-                                </div>
+                                
+                                <div className='flex items-center justify-center'>
+                                    <p className='text-lg  lg:text-xl lg:font-medium w-72'
+                                    >Add links to booking services, delivery platforms, 
+                                    or let users send messages directly to your email inbox
+                                    </p>  
+                                </div>                              
                             </div>
                             
-                            <div className='flex items-center justify-center'>
+                            <div className='flex z-1 items-center justify-center'>
                                 <DemoBook />
                             </div>
                         </div>

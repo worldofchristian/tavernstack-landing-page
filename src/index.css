@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Built Titling';
-    src: url('./fonts/built-titling-sb.otf') format('opentype');
+    font-family: 'Libre Baskerville';
+    src: url('./fonts/LibreBaskerville-Regular.ttf') format('opentype');
 }
 
 .boldtheme {
@@ -16,4 +16,12 @@
     height: 7px;
     border-radius: 10px; 
     background-color: #bbbbbb;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #736EFE, #5EFCE8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }

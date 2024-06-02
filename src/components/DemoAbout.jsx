@@ -1,5 +1,4 @@
 import asteroid from '../assets/asteroid.jpg';
-//import { HiMenuAlt2 } from 'react-icons/hi';
 
 const DemoAbout = () => {
     return (
@@ -10,21 +9,6 @@ const DemoAbout = () => {
         </div>
         
         <div className='flex flex-col'>
-            {/*
-            <div className="h-12 w-full bg-base-300 rounded-3xl">
-                <div className="flex justify-between items-center mx-auto p-4">
-                    <HiMenuAlt2
-                    className="text-2xl cursor-pointer" 
-                    />
-
-                    <button
-                    className="btn btn-primary rounded-2xl"
-                    >Book
-                    </button>
-                </div>
-            </div>
-            */}
-
             <div className="flex justify-center items-center">
                 <div className='flex flex-col'>
                     <div>
@@ -33,13 +17,13 @@ const DemoAbout = () => {
                                 <div className="flex flex-col items-center">
                                     <div className='flex items-center justify-center'>
                                         <img
-                                        className='w-4/6 rounded-2xl mt-10' 
+                                        className='w-64 rounded-2xl mt-8' 
                                         src={asteroid}
                                         alt="Asteroid storefront"
                                         />
                                     </div>
 
-                                    <h1 className="text-2xl font-bold mb-5 mt-8 text-center"
+                                    <h1 className="text-3xl font-bold mb-5 mt-8 text-center"
                                     >Asteroid Burger
                                     </h1>
 
