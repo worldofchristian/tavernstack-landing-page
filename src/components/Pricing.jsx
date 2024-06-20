@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaAngleDoubleRight, FaCheck } from "react-icons/fa";
 
 const Pricing = () => {
-    const originalPrice = 20;
+    const originalPrice = 10;
     const [price, setPrice] = useState(originalPrice);
     const currencies = [
         { code: 'CAD', flag: '🇨🇦', exchangeRate: 1 },
