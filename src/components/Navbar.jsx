@@ -5,7 +5,7 @@ const Navbar = () => {
 
     return (
       <nav className="sticky top-0 z-10 backdrop-filter bg-opacity-30 backdrop-blur-xl bg-base">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
           <div className="flex items-center justify-between h-14">
             <div className="dropdown dropdown-bottom lg:dropdown-left">
                 <label tabIndex={0} className="btn btn-ghost rounded-btn">
