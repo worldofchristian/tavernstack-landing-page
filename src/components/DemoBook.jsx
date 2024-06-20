@@ -38,7 +38,7 @@ const DemoBook = () => {
         <div className='flex flex-col'>
             <div className="h-10 w-full bg-base-300 rounded-3xl">
                 {showToast &&
-                <div className="toast toast-top toast-center mt-12">
+                <div className="toast toast-top toast-center mt-10">
                     <div className="alert alert-info">
                         <span>That would have sent!</span>
                     </div>

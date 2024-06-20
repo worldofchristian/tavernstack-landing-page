@@ -114,8 +114,7 @@ const HeroAbout = () => {
                                 
                                 <div className='flex items-center justify-center'>
                                     <p className='text-lg  lg:text-xl lg:font-medium w-72'
-                                    >Add links to booking services, delivery platforms, 
-                                    or let users send messages directly to your email inbox
+                                    >Add links and let users send messages directly to your email
                                     </p>  
                                 </div>                              
                             </div>

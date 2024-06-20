@@ -21,7 +21,7 @@ const Navbar = () => {
                         >Home
                         </Link>
                     </li>
-
+                    {/*
                     <li>
                         <a
                         href='https://demo.tavernstack.com'
@@ -36,6 +36,7 @@ const Navbar = () => {
                         >Blog
                         </Link>
                     </li>
+                    */}
                 </ul>
             </div>
             
