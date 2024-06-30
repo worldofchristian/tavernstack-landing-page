@@ -1,8 +1,6 @@
-import { FaPalette } from 'react-icons/fa';
-import { IoMdSend } from "react-icons/io";
+import { FaAngleRight, FaCheck, FaPalette } from 'react-icons/fa';
 import DemoAbout from './DemoAbout';
 import ackblue from '../assets/ackblue.png';
-import DemoBook from './DemoBook';
 import DemoMenu from './DemoMenu';
 
 const HeroAbout = () => {
@@ -30,7 +28,7 @@ const HeroAbout = () => {
                 </section>
             </div>
 
-            <div className='flex item-center justify-center mt-20 mb-12'>
+            <div className='flex item-center justify-center mt-20 mb-20'>
                 <div className='flex flex-col'>
                     <div className='flex items-center justify-center'>
                         <div className='max-w-xs'>
@@ -47,80 +45,52 @@ const HeroAbout = () => {
                         </div>
                     </div>
 
-                    <div className='flex items-center justify-center my-20'>
+                    <div className='flex items-center justify-center mt-20 mb-10'>
                         <DemoMenu />
                     </div>
 
-                    {/*
                     <div className='flex items-center justify-center'>
-                        <div className='grid grid-cols-1 lg:grid-cols-2 max-w-[370px] lg:max-w-lg'>
-                            <div className='flex flex-col'>
-                                <div className='flex flex-row'>
-                                    <FaCheck className='text-lg lg:text-xl' />
+                        <div className='flex flex-col mb-10 lg:mb-20'>
+                            <div className='relative'>
+                                <div className='flex items-center justify-center'>
+                                    <div className="absolute top-0 h-[120px] border-[4px] border-base-300 rounded-full"></div>
+                                </div>
 
+                                <div className='flex flex-col items-center mt-36'>
                                     <p className='text-lg lg:text-xl ml-3'
                                     >Export as a ready-to-print PDF
                                     </p>
-                                </div>
 
-                                <div className='flex flex-row mt-5'>
-                                    <FaCheck className='text-md lg:text-xl' />
-
-                                    <p className='text-lg lg:text-xl ml-3'
+                                    <p className='text-lg lg:text-xl mt-5 ml-3'
                                     >Fits a standard 8.5x11 menu cover
                                     </p>
                                 </div>
                             </div>
-
-                            
-                        </div>
+                        </div>      
                     </div>
-                    */}
 
                     <div className='flex items-center justify-center my-20'>
                         <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-center justify-center'>
-                            <div className='flex flex-col text-center'>
-                                <div className='flex flex-row gap-2 justify-center items-center rounded-full lg:max-w-[470px] p-4'>
-                                    <FaPalette className='text-2xl lg:text-3xl text-secondary' />
+                            <div className='flex items-center justify-center'>
+                            <div className='flex flex-col text-center w-80'>
+                                <div className='flex flex-col gap-2 justify-center items-center rounded-full lg:max-w-[470px] p-4'>
+                                    <FaPalette className='text-3xl lg:text-4xl text-secondary' />
                                     
-                                    <h2 className='text-2xl lg:text-3xl font-bold mt-2'
+                                    <h2 className='text-2xl lg:text-3xl font-bold'
                                     >Design-free
                                     </h2>
                                 </div>
                                 
                                 <div className='flex items-center justify-center'>
-                                    <p className='text-lg  lg:text-xl lg:font-medium w-72'
+                                    <p className='text-lg lg:text-xl lg:font-medium'
                                     >Your site grows automatically as you fill out your profile
                                     </p>  
                                 </div>                              
                             </div>
+                            </div>
                             
                             <div className='flex z-1 items-center justify-center'>
                                 <DemoAbout />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='flex items-center justify-center my-20'>
-                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-center justify-center'>
-                            <div className='flex flex-col text-center'>
-                                <div className='flex flex-row gap-2 justify-center items-center rounded-full lg:max-w-[470px] p-4'>
-                                    <IoMdSend className='text-2xl lg:text-3xl text-secondary' />
-                                    
-                                    <h2 className='text-2xl lg:text-3xl font-bold mt-2'
-                                    >User actions
-                                    </h2>
-                                </div>
-                                
-                                <div className='flex items-center justify-center'>
-                                    <p className='text-lg  lg:text-xl lg:font-medium w-72'
-                                    >Add links and let users send messages directly to your email
-                                    </p>  
-                                </div>                              
-                            </div>
-                            
-                            <div className='flex z-1 items-center justify-center'>
-                                <DemoBook />
                             </div>
                         </div>
                     </div>

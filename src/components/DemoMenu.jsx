@@ -4,10 +4,8 @@ import tastyburger from '../assets/tastyburger.jpg';
 const DemoMenu = () => {
     return (
     <>
-    <div className="mockup-browser border-slate-600 bg-base-300 h-[530px] max-w-[350px] md:max-w-sm lg:max-w-lg rounded-3xl">
-        <div className="mockup-browser-toolbar">
-            <div className="input">https://asteroid.tavernstack.com</div>
-        </div>
+    <div className="mockup-browser border-slate-600 bg-base-300 h-[530px] max-w-[350px] lg:max-w-md rounded-3xl">
+        <div className="mockup-browser-toolbar"></div>
 
         <div className='flex items-center justify-center p-8'>
             <div className="container">
@@ -16,7 +14,7 @@ const DemoMenu = () => {
                         <button className='flex items-center justify-between w-full bg-blue-500 px-4 py-4 mb-5 rounded-lg' >
                             <span 
                             className="text-md text-white font-medium"
-                            >Burgers
+                            >Drinks
                             </span>
                             
                             <FaAngleDown className='w-6 h-6 text-white' />
