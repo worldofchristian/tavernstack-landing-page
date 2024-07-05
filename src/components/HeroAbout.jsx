@@ -1,7 +1,8 @@
-import { FaAngleRight, FaCheck, FaPalette } from 'react-icons/fa';
+import { FaPalette } from 'react-icons/fa';
 import DemoAbout from './DemoAbout';
 import ackblue from '../assets/ackblue.png';
 import DemoMenu from './DemoMenu';
+import { IoColorWandSharp } from 'react-icons/io5';
 
 const HeroAbout = () => {
     return (
@@ -35,7 +36,7 @@ const HeroAbout = () => {
                             <div className="flex flex-col items-center">
                                 <div className="relative">
                                     <p className="mb-24 text-center text-lg lg:text-xl pl-0 ml-0"
-                                    >Create a digital menu with photos, icons, and tabbed navigation
+                                    >Make it easy for vistors to browse your menu
                                     </p>
                                     <div className='flex items-center justify-center'>
                                         <div className="absolute top-1/2 h-[120px] border-[4px] border-base-300 rounded-full"></div>
@@ -69,24 +70,38 @@ const HeroAbout = () => {
                         </div>      
                     </div>
 
-                    <div className='flex items-center justify-center my-20'>
-                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-20 items-center justify-center'>
+                    <div className='flex items-center justify-center my-32'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-32 items-center justify-center'>
                             <div className='flex items-center justify-center'>
-                            <div className='flex flex-col text-center w-80'>
-                                <div className='flex flex-col gap-2 justify-center items-center rounded-full lg:max-w-[470px] p-4'>
-                                    <FaPalette className='text-3xl lg:text-4xl text-secondary' />
+                                <div className='flex flex-col text-center w-80'>
+                                    <div className='flex flex-col gap-3 justify-center items-center rounded-full lg:max-w-[470px] p-4'>
+                                        <FaPalette className='text-3xl lg:text-4xl text-secondary' />
+                                        
+                                        <h2 className='text-2xl lg:text-3xl font-bold'
+                                        >Design-free
+                                        </h2>
+                                    </div>
                                     
-                                    <h2 className='text-2xl lg:text-3xl font-bold'
-                                    >Design-free
-                                    </h2>
+                                    <div className='flex items-center justify-center'>
+                                        <p className='text-lg lg:text-xl lg:font-medium'
+                                        >Your site grows automatically as you fill out your profile
+                                        </p>  
+                                    </div>   
+
+                                    <div className='flex flex-col gap-3 mt-20 justify-center items-center rounded-full lg:max-w-[470px] p-4'>
+                                        <IoColorWandSharp className='text-3xl lg:text-4xl text-secondary' />
+                                        
+                                        <h2 className='text-2xl lg:text-3xl font-bold'
+                                        >Autofill
+                                        </h2>
+                                    </div>
+                                    
+                                    <div className='flex items-center justify-center'>
+                                        <p className='text-lg lg:text-xl lg:font-medium'
+                                        >Populate your profile with the info from your Google listing
+                                        </p>  
+                                    </div>                           
                                 </div>
-                                
-                                <div className='flex items-center justify-center'>
-                                    <p className='text-lg lg:text-xl lg:font-medium'
-                                    >Your site grows automatically as you fill out your profile
-                                    </p>  
-                                </div>                              
-                            </div>
                             </div>
                             
                             <div className='flex z-1 items-center justify-center'>

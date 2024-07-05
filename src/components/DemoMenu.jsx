@@ -1,79 +1,177 @@
-import { FaAngleDown, FaPlus } from 'react-icons/fa';
-import tastyburger from '../assets/tastyburger.jpg';
+import { FaAngleDown, FaAngleRight, FaLeaf, FaPepperHot } from 'react-icons/fa';
+import margarit from '../assets/margarit.jpg';
+import of from '../assets/of.jpg';
+import fry from '../assets/fry.jpg';
+import wing from '../assets/wing.jpg';
+import { useState } from 'react';
 
 const DemoMenu = () => {
+    const [isCocktail, setIsCocktail] = useState(null);
+    const [isSnack, setIsSnack] = useState(null);
+        
     return (
     <>
-    <div className="mockup-browser border-slate-600 bg-base-300 h-[530px] max-w-[350px] lg:max-w-md rounded-3xl">
+    <div className="mockup-browser border-slate-600 bg-base-300 w-[350px] lg:w-[450px] rounded-3xl">
         <div className="mockup-browser-toolbar"></div>
 
         <div className='flex items-center justify-center p-8'>
             <div className="container">
                 <div className="flex items-center justify-center mb-6">
-                    <div className='flex flex-col max-w-[370px]'>
-                        <button className='flex items-center justify-between w-full bg-blue-500 px-4 py-4 mb-5 rounded-lg' >
+                    <div className='flex flex-col w-full'>
+                        <button 
+                        className={`flex items-center justify-between w-full ${isCocktail ? 'bg-blue-500' : 'bg-base-100'} px-4 py-4 mb-5 rounded-lg`}
+                        onClick={() =>  {
+                            setIsCocktail(!isCocktail)
+                            setIsSnack(false)
+                        }}
+                        >
                             <span 
-                            className="text-md text-white font-medium"
-                            >Drinks
+                            className="text-xl text-white font-medium"
+                            >Cocktails
                             </span>
                             
-                            <FaAngleDown className='w-6 h-6 text-white' />
+                            {isCocktail ?
+                                <FaAngleDown className='w-6 h-6 text-white' /> :
+                                <FaAngleRight className='w-6 h-6 text-white' />
+                            }
                         </button>
 
-                        <div className='flex flex-row mb-5 gap-3 items-center justify-center'>
-                            <FaPlus />
-                            
-                            <p className='text-md text-center'
-                            >Add fries & can of pop - $4.95
-                            </p>
-                        </div>
-
-                        <div className='flex items-center justify-center'>
-                            <img
-                            src={tastyburger}
-                            className='max-w-[230px] lg:max-w-[250px] rounded-3xl'
-                            />
-                        </div>
-
-                        <div className='flex items-center justify-center'>
-                            <div className='flex flex-col mt-4'>
-                                <p className='text-lg font-medium text-center'
-                                >Classic Burger
-                                </p>
-
-                                <div className='flex flex-row justify-between mt-1 gap-5 items-center'>
+                        {isCocktail && 
+                        <>
+                            <div className='flex flex-row w-full gap-4 mt-2 lg:mt-5'>
+                                <div className='flex items-center justify-center'>
+                                    <img
+                                    src={margarit}
+                                    className='w-48 object-cover rounded-3xl'
+                                    />
+                                </div>
+                                
+                                <div className='flex flex-row gap-5 lg:gap-20 mt-4'>
                                     <div className='flex flex-col'>
-                                        <p className='text-xl text-center'
-                                        >$5.95
+                                        <p className='text-lg lg:text-xl font-semibold'
+                                        >Margarita
                                         </p>
 
-                                        <p className='text-md text-center'
-                                        >3oz
+                                        <p className='text-md mt-1'
+                                        >Blanco tequila, triple sec, lime, sugar, salt
                                         </p>
                                     </div>
 
-                                    <div className='flex flex-col'>
-                                        <p className='text-xl text-center'
-                                        >$7.25
-                                        </p>
-
-                                        <p className='text-md text-center'
-                                        >3oz
-                                        </p>
-                                    </div>
-
-                                    <div className='flex flex-col'>
-                                        <p className='text-xl text-center'
-                                        >$8.50
-                                        </p>
-
-                                        <p className='text-md text-center'
-                                        >3oz
-                                        </p>
-                                    </div>
+                                    <p className='text-lg lg:text-xl font-semibold'
+                                    >$10
+                                    </p>
                                 </div>
                             </div>
-                        </div>
+
+                            <div className='flex flex-row w-full gap-4 my-10'>
+                                <div className='flex items-center justify-center'>
+                                    <img
+                                    src={of}
+                                    className='w-40 object-cover rounded-3xl'
+                                    />
+                                </div>
+                                
+                                <div className='flex flex-row gap-5 lg:gap-20 mt-4'>
+                                    <div className='flex flex-col'>
+                                        <p className='text-lg lg:text-xl font-semibold'
+                                        >Old Fashioned
+                                        </p>
+
+                                        <p className='text-md mt-1'
+                                        >Bourbon, sugar, angostura bitters
+                                        </p>
+                                    </div>
+
+                                    <p className='text-lg lg:text-xl font-semibold'
+                                    >$12
+                                    </p>
+                                </div>
+                            </div>
+                        </>
+                        }
+
+                        <button 
+                        className={`flex items-center justify-between w-full ${isSnack ? 'bg-blue-500' : 'bg-base-100'} px-4 py-4 mb-5 rounded-lg`}
+                        onClick={() => {
+                            setIsSnack(!isSnack)
+                            setIsCocktail(false)
+                        }}
+                        >
+                            <span 
+                            className="text-xl text-white font-medium"
+                            >Snacks
+                            </span>
+                            
+                            {isSnack ?
+                                <FaAngleDown className='w-6 h-6 text-white' /> :
+                                <FaAngleRight className='w-6 h-6 text-white' />
+                            }
+                        </button>
+
+                        {isSnack &&
+                        <>
+                            <div className='flex flex-row w-full gap-4 mt-2 lg:mt-5'>
+                                <div className='flex items-center justify-center'>
+                                    <img
+                                    src={fry}
+                                    className='w-48 object-cover rounded-3xl'
+                                    />
+                                </div>
+                                
+                                <div className='flex flex-row gap-5 lg:gap-20 mt-4'>
+                                    <div className='flex flex-col'>
+                                        <p className='text-lg lg:text-xl font-semibold'
+                                        >Fries
+                                        </p>
+
+                                        <p className='text-md mt-1'
+                                        >Hand cut fries, sea salt, ketchup
+                                        </p>
+                                    </div>
+
+                                    <p className='text-lg lg:text-xl font-semibold'
+                                    >$8
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className='flex flex-row w-full gap-4 my-10'>
+                                <div className='flex items-center justify-center'>
+                                    <img
+                                    src={wing}
+                                    className='w-48 object-cover rounded-3xl'
+                                    />
+                                </div>
+
+                                <div className='flex flex-col'>
+                                    <div className='flex flex-row gap-1 lg:gap-20 justify-between mt-4'>
+                                        <div className='flex flex-row gap-2'>
+                                            <p className='text-lg lg:text-xl font-semibold'
+                                            >Wings
+                                            </p>
+  
+                                            <FaPepperHot className='w-4 h-4 mt-1 text-red-500' />
+                                            <FaLeaf className='w-4 h-4 mt-1 text-green-500' />
+                                        </div>
+
+                                        <p className='text-lg lg:text-xl font-semibold'
+                                        >$17
+                                        </p>
+                                    </div>
+
+                                    <p className='text-md mt-1 w-40'
+                                    >BBQ, lemon pepper, hot, or plant-based
+                                    </p>
+                                </div>
+                            </div>
+                        </>
+                        }
+                        
+                        {!isSnack && !isCocktail &&
+                            <h1 className='text-2xl font-bold text-center mt-5'
+                            >Try it out!
+                            </h1>
+                        }
                     </div>
                 </div>
             </div>
