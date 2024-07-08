@@ -1,7 +1,6 @@
 import { FaInfoCircle } from "react-icons/fa"
 import LaborChart from "../components/LaborChart"
 import Navbar from "../components/Navbar"
-import { FiRefreshCw } from "react-icons/fi"
 import FoodChart from "../components/FoodChart"
 
 const Data = () => {
