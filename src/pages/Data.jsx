@@ -1,9 +1,14 @@
+import { useEffect } from "react"
 import { FaInfoCircle } from "react-icons/fa"
 import LaborChart from "../components/LaborChart"
 import Navbar from "../components/Navbar"
 import FoodChart from "../components/FoodChart"
 
 const Data = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
   return (
     <>
     <Navbar />

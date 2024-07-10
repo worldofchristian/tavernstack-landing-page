@@ -4,7 +4,7 @@ import ackblue from '../assets/ackblue.png';
 import DemoMenu from './DemoMenu';
 import { IoColorWandSharp } from 'react-icons/io5';
 
-const HeroAbout = () => {
+const HeroAbout = ({ margarit, of, wing, fry}) => {
     return (
     <>
     <div className='flex items-center justify-center'>
@@ -47,7 +47,7 @@ const HeroAbout = () => {
                     </div>
 
                     <div className='flex items-center justify-center mt-20 mb-10'>
-                        <DemoMenu />
+                        <DemoMenu margarit={margarit} of={of} wing={wing} fry={fry} />
                     </div>
 
                     <div className='flex items-center justify-center'>
@@ -70,7 +70,7 @@ const HeroAbout = () => {
                         </div>      
                     </div>
 
-                    <div className='flex items-center justify-center my-32'>
+                    <div className='flex items-center justify-center my-32 mx-4'>
                         <div className='grid grid-cols-1 lg:grid-cols-2 gap-32 items-center justify-center'>
                             <div className='flex items-center justify-center'>
                                 <div className='flex flex-col text-center w-80'>

@@ -1,11 +1,7 @@
 import { FaAngleDown, FaAngleRight, FaLeaf, FaPepperHot } from 'react-icons/fa';
-import margarit from '../assets/margarit.jpg';
-import of from '../assets/of.jpg';
-import fry from '../assets/fry.jpg';
-import wing from '../assets/wing.jpg';
 import { useState } from 'react';
 
-const DemoMenu = () => {
+const DemoMenu = ({ margarit, of, wing, fry }) => {
     const [isCocktail, setIsCocktail] = useState(null);
     const [isSnack, setIsSnack] = useState(null);
         
@@ -38,11 +34,11 @@ const DemoMenu = () => {
 
                         {isCocktail && 
                         <>
-                            <div className='flex flex-row w-full gap-4 mt-2 lg:mt-5'>
+                            <div className='flex flex-row w-full gap-5 mt-2 lg:mt-5'>
                                 <div className='flex items-center justify-center'>
                                     <img
                                     src={margarit}
-                                    className='w-48 object-cover rounded-3xl'
+                                    className='w-full object-cover rounded-3xl'
                                     />
                                 </div>
                                 
@@ -52,7 +48,7 @@ const DemoMenu = () => {
                                         >Margarita
                                         </p>
 
-                                        <p className='text-md mt-1'
+                                        <p className='text-md mt-1 w-[120px]'
                                         >Blanco tequila, triple sec, lime, sugar, salt
                                         </p>
                                     </div>
@@ -67,7 +63,7 @@ const DemoMenu = () => {
                                 <div className='flex items-center justify-center'>
                                     <img
                                     src={of}
-                                    className='w-40 object-cover rounded-3xl'
+                                    className='w-full object-cover rounded-3xl'
                                     />
                                 </div>
                                 
@@ -77,7 +73,7 @@ const DemoMenu = () => {
                                         >Old Fashioned
                                         </p>
 
-                                        <p className='text-md mt-1'
+                                        <p className='text-md w-[120px] mt-1'
                                         >Bourbon, sugar, angostura bitters
                                         </p>
                                     </div>
@@ -114,7 +110,7 @@ const DemoMenu = () => {
                                 <div className='flex items-center justify-center'>
                                     <img
                                     src={fry}
-                                    className='w-48 object-cover rounded-3xl'
+                                    className='w-full object-cover rounded-3xl'
                                     />
                                 </div>
                                 
@@ -124,7 +120,7 @@ const DemoMenu = () => {
                                         >Fries
                                         </p>
 
-                                        <p className='text-md mt-1'
+                                        <p className='text-md mt-1 w-[107px]'
                                         >Hand cut fries, sea salt, ketchup
                                         </p>
                                     </div>
@@ -139,12 +135,12 @@ const DemoMenu = () => {
                                 <div className='flex items-center justify-center'>
                                     <img
                                     src={wing}
-                                    className='w-48 object-cover rounded-3xl'
+                                    className='w-full object-cover rounded-3xl'
                                     />
                                 </div>
 
                                 <div className='flex flex-col'>
-                                    <div className='flex flex-row gap-1 lg:gap-20 justify-between mt-4'>
+                                    <div className='flex flex-row gap-5 lg:gap-20 justify-between mt-4'>
                                         <div className='flex flex-row gap-2'>
                                             <p className='text-lg lg:text-xl font-semibold'
                                             >Wings
@@ -159,7 +155,7 @@ const DemoMenu = () => {
                                         </p>
                                     </div>
 
-                                    <p className='text-md mt-1 w-40'
+                                    <p className='text-md mt-1 w-[120px]'
                                     >BBQ, lemon pepper, hot, or plant-based
                                     </p>
                                 </div>
