@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import margarit from './assets/margarit.avif';
 import of from './assets/of.avif';
 import fry from './assets/fry.avif';
-import wing from './assets/wing.avif';
+import wing from './assets/wings.avif';
 
 function App() {
   return (
