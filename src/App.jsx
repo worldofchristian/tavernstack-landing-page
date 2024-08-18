@@ -1,10 +1,10 @@
 import Home from './pages/Home'
 import Navbar from './components/Navbar';
 import { Helmet } from 'react-helmet-async';
-import margarit from './assets/margarit.jpg';
-import of from './assets/of.jpg';
-import fry from './assets/fry.jpg';
-import wing from './assets/wing.jpg';
+import margarit from './assets/margarit.avif';
+import of from './assets/of.avif';
+import fry from './assets/fry.avif';
+import wing from './assets/wing.avif';
 
 function App() {
   return (
