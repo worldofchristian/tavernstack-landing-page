@@ -8,20 +8,30 @@ export default defineConfig({
     react(),
     viteCompression({
       algorithm: 'gzip',
-    })
+      ext: '.gz',
+      threshold: 10240, // 10KB
+      deleteOriginFile: false,
+      filter: /\.(js|mjs|json|css|html)$/i, 
+    }),
+    viteCompression({
+      algorithm: 'brotliCompress',
+      ext: '.br',
+      threshold: 10240,
+      deleteOriginFile: false,
+      filter: /\.(js|mjs|json|css|html)$/i,
+    }),
   ],
   build: {
     minify: 'terser',
-    sourcemap: true, 
-    cssCodeSplit: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return id.toString().split('node_modules/')[1].split('/')[0].toString();
-          }
-        }
-      }
-    }
-  }
+        manualChunks: {
+          vendor: [
+            'react', 'react-dom', 'react-router-dom', 'react-helmet-async', 'react-icons', 'react-swipeable'
+          ],
+        },
+      },
+    },
+  },
 })
