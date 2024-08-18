@@ -55,7 +55,7 @@ const DemoAbout = () => {
                                 >
                                     <img 
                                     src={photo} alt={`Feature ${index + 1}`} 
-                                    className="h-52 lg:h-72 rounded-2xl object-cover" />
+                                    className="rounded-2xl object-cover" />
                                 </div>
                             ))}
                         </div>
