@@ -1,8 +1,10 @@
 import { useEffect } from "react"
-import { FaInfoCircle } from "react-icons/fa"
-import LaborChart from "../components/LaborChart"
+//import { FaInfoCircle } from "react-icons/fa"
 import Navbar from "../components/Navbar"
+{/*
+import LaborChart from "../components/LaborChart"
 import FoodChart from "../components/FoodChart"
+*/}
 
 const Data = () => {
     useEffect(() => {
@@ -25,6 +27,7 @@ const Data = () => {
         </div>
     </div>
 
+    {/*
     <div className="flex items-center justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center gap-20 my-20 max-w-7xl">
             <div className="flex flex-col items-center justify-center lg:mr-10">
@@ -108,6 +111,7 @@ const Data = () => {
             </div>
         </div>
     </div>
+    */}
     </>
   )
 }
