@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
 import { useSwipeable } from 'react-swipeable';
-import bar1 from '../assets/bar1.jpg';
-import bar2 from '../assets/bar2.jpg';
-import bar3 from '../assets/bar3.jpg';
+import bar1 from '../assets/bar1.avif';
+import bar2 from '../assets/bar2.avif';
+import bar3 from '../assets/bar3.avif';
 
 const DemoAbout = () => {
     const [featuresPhoto] = useState([bar2,bar1,bar3]);
