@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 const HeroAbout = ({ margarit, of, wing, fry}) => {
     const options = useMemo(() => ['caterers and pop-ups', 'bars and restaurants'], []);
-    const [currentOption, setCurrentOption] = useState(options[2]);
+    const [currentOption, setCurrentOption] = useState(options[1]);
     const [direction, setDirection] = useState(1); 
 
     useEffect(() => {
