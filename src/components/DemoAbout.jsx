@@ -26,17 +26,17 @@ const DemoAbout = () => {
 
     return (
     <>
-    <div className="mockup-browser border-slate-600 bg-base-300 h-[500px] lg:h-[600px] max-w-[350px] md:max-w-sm lg:max-w-lg rounded-3xl">
+    <div className="mockup-browser border-slate-600 bg-base-300 h-[500px] lg:h-[600px] max-w-[350px] md:max-w-sm lg:max-w-2xl rounded-3xl">
         <div className="mockup-browser-toolbar"></div>
 
         <div className="flex justify-center items-center">
-            <div className="flex flex-col">
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 items-center">
                 <div className='flex flex-col mt-10'>
-                    <h1 className="text-3xl lg:text-4xl font-bold text-center"
+                    <h1 className="text-3xl lg:text-4xl font-bold text-center lg:text-right"
                     >Your bar
                     </h1>
 
-                    <p className="text-center mt-2 overflow-hidden"
+                    <p className="text-center lg:text-right mt-2 overflow-hidden"
                     >Add a cool cover page to your cool bar
                     </p>
                 </div>

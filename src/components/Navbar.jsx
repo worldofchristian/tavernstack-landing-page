@@ -1,15 +1,16 @@
+import { FaSeedling } from 'react-icons/fa';
 import { HiMenuAlt2 } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import ackblue from '../assets/ackblue.png';
 
 const Navbar = () => {
-
     return (
-      <nav className="sticky top-0 z-10 backdrop-filter bg-opacity-30 backdrop-blur-xl bg-base">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="flex items-center justify-between h-14">
+      <nav className="sticky top-0 z-50 backdrop-filter bg-opacity-30 backdrop-blur-lg bg-base">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex items-center justify-between">
             <div className="dropdown dropdown-bottom lg:dropdown-left">
                 <label tabIndex={0} className="btn btn-ghost rounded-btn">
-                    <HiMenuAlt2 className='text-2xl' />
+                    <HiMenuAlt2 className='text-2xl lg:text-3xl' />
                 </label>
 
                 <ul 
@@ -40,6 +41,11 @@ const Navbar = () => {
                 </ul>
             </div>
             
+            <div className='flex flex-row items-center gap-1'>
+              <img src={ackblue} alt='ackblue' className='h-7 w-7' />
+              <p className='text-md font-semibold'>tavernstack</p>
+            </div>
+
             <a 
             href='https://app.tavernstack.com'
             alt='log in link'
