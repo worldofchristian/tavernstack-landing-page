@@ -1,10 +1,11 @@
-import { FaSeedling } from 'react-icons/fa';
 import { HiMenuAlt2 } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import ackblue from '../assets/ackblue.png';
 
 const Navbar = () => {
     return (
+      <>
+      <div className='-mt-20 h-20 z-50 backdrop-filter bg-opacity-30 backdrop-blur-lg bg-base'></div>
       <nav className="sticky top-0 z-50 backdrop-filter bg-opacity-30 backdrop-blur-lg bg-base">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between">
@@ -59,6 +60,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      </>
     );
   };
   

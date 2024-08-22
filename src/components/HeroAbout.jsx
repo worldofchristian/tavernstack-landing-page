@@ -69,7 +69,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                 </section>
             </div>
 
-            <div className='flex item-center justify-center mt-20 lg:mt-32 mb-20'>
+            <div className='flex item-center justify-center mt-16 lg:mt-32 mb-20'>
                 <div className='flex flex-col'>
                     <div className='flex items-center justify-center'>
                         <div className='max-w-xs'>
@@ -86,7 +86,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                         </div>
                     </div>
 
-                    <div className='flex items-center justify-center mt-20 mb-10'>
+                    <div className='flex items-center justify-center mt-12 mb-10'>
                         <DemoMenu margarit={margarit} of={of} wing={wing} fry={fry} />
                     </div>
 
