@@ -7,7 +7,7 @@ import { HiOutlineDocumentAdd } from "react-icons/hi";
 import PropTypes from 'prop-types';
 
 const HeroAbout = ({ margarit, of, wing, fry}) => {
-    const options = useMemo(() => ['coffee shops', 'breweries', 'bars and restaurants', 'nightclubs', 'food trucks'], []);
+    const options = useMemo(() => ['caterers and pop-ups', 'bars and restaurants'], []);
     const [currentOption, setCurrentOption] = useState(options[2]);
     const [direction, setDirection] = useState(1); 
 
@@ -58,7 +58,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                                         initial="enter"
                                         animate="center"
                                         exit="exit"
-                                        transition={{ duration: 0.5 }}
+                                        transition={{ duration: 0.3 }}
                                     >
                                         <span className='gradient-text text-transition'> {currentOption}</span>
                                     </motion.div>
@@ -76,7 +76,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                             <div className="flex flex-col items-center">
                                 <div className="relative">
                                     <p className="mb-24 text-center text-lg lg:text-xl pl-0 ml-0"
-                                    >Make it easy for vistors to see what you offer
+                                    >Turn traffic into customers with a searchable menu
                                     </p>
                                     <div className='flex items-center justify-center'>
                                         <div className="absolute top-1/2 h-[120px] border-[4px] border-base-300 rounded-full"></div>
