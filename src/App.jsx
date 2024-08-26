@@ -16,8 +16,6 @@ function App() {
         <link rel='preload' as='image' href={fry} />
         <link rel='preload' as='image' href={wing} />
       </Helmet>
-
-      <Navbar />
       <Home margarit={margarit} of={of} fry={fry} wing={wing} />
     </div>
     </>

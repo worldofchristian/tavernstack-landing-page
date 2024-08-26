@@ -1,14 +1,14 @@
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaPalette } from 'react-icons/fa';
+import { FaAngleRight, FaPalette } from 'react-icons/fa';
 import DemoAbout from './DemoAbout';
 import DemoMenu from './DemoMenu';
 import { HiOutlineDocumentAdd } from "react-icons/hi";
 import PropTypes from 'prop-types';
 
 const HeroAbout = ({ margarit, of, wing, fry}) => {
-    const options = useMemo(() => ['caterers and pop-ups', 'bars and restaurants'], []);
-    const [currentOption, setCurrentOption] = useState(options[1]);
+    const options = useMemo(() => ['bars and restaurants', 'catering services', 'food trucks and pop-ups'], []);
+    const [currentOption, setCurrentOption] = useState(options[0]);
     const [direction, setDirection] = useState(1); 
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                 setDirection(1); // slide to the left
                 return options[nextIndex];
             });
-        }, 2500); 
+        }, 2900); 
 
         return () => clearInterval(interval);
     }, [options]);
@@ -37,7 +37,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
           x: direction > 0 ? '-100%' : '100%',
           opacity: 0,
         }),
-      };
+    };
 
     return (
     <>
@@ -46,9 +46,9 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
             <div className='flex items-center justify-center'>
                 <section className='w-full'>
                     <div className='flex items-center justify-center'>
-                        <div className='flex flex-colm mt-20 lg:mt-32 p-2 max-w-[380px] items-center lg:max-w-2xl'>
+                        <div className='flex flex-colm mt-20 lg:mt-32 p-2 max-w-[370px] items-center lg:max-w-3xl'>
                             <h1 
-                            className="text-4xl lg:text-6xl font-bold text-center"
+                            className="text-3xl lg:text-6xl font-bold text-center"
                             >A website builder for
                                 <AnimatePresence mode="wait" custom={direction}>
                                     <motion.div
@@ -58,7 +58,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                                         initial="enter"
                                         animate="center"
                                         exit="exit"
-                                        transition={{ duration: 0.3 }}
+                                        transition={{ duration: 0.35 }}
                                     >
                                         <span className='gradient-text text-transition'> {currentOption}</span>
                                     </motion.div>
@@ -69,42 +69,41 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                 </section>
             </div>
 
-            <div className='flex item-center justify-center mt-16 lg:mt-32 mb-20'>
+            <div className='flex item-center justify-center mt-32 mb-20'>
                 <div className='flex flex-col'>
                     <div className='flex items-center justify-center'>
                         <div className='max-w-xs'>
                             <div className="flex flex-col items-center">
                                 <div className="relative">
-                                    <p className="mb-24 text-center text-lg lg:text-xl pl-0 ml-0"
-                                    >Turn traffic into customers with a searchable menu
+                                    <p className="mb-32 text-center text-lg lg:text-xl pl-0 ml-0"
+                                    >Start with a searchable menu that makes it easy for visitors to find what they're looking for
                                     </p>
                                     <div className='flex items-center justify-center'>
-                                        <div className="absolute top-1/2 h-[120px] border-[4px] border-base-300 rounded-full"></div>
+                                        <div className="absolute top-1/2 h-[100px] border-[4px] border-base-300 rounded-full"></div>
                                     </div>
                                 </div>                
                             </div>
                         </div>
                     </div>
 
-                    <div className='flex items-center justify-center mt-12 mb-10'>
+                    <div className='flex items-center justify-center my-5'>
                         <DemoMenu margarit={margarit} of={of} wing={wing} fry={fry} />
                     </div>
 
                     <div className='flex items-center justify-center'>
-                        <div className='flex flex-col mb-10 lg:mb-20'>
+                        <div className='flex flex-col w-80'>
                             <div className='relative'>
                                 <div className='flex items-center justify-center'>
-                                    <div className="absolute top-0 h-[120px] border-[4px] border-base-300 rounded-full"></div>
+                                    <div className="absolute top-0 h-[100px] border-[4px] border-base-300 rounded-full"></div>
                                 </div>
 
-                                <div className='flex flex-col items-center mt-36'>
+                                <div className='flex flex-col items-center justify-start mt-32'>
                                     <p className='text-lg lg:text-xl ml-3'
                                     >Export as a ready-to-print PDF
                                     </p>
 
-                                    <p className='text-lg lg:text-xl mt-5 ml-3'
-                                    >Fits a standard 8.5x11 menu cover
-                                    </p>
+                                    <p className='text-lg lg:text-xl text-center mt-5'
+                                    >Automatically converts your menu to a 8.5x11 or 11x17 sized document</p>
                                 </div>
                             </div>
                         </div>      
@@ -124,7 +123,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                                     
                                     <div className='flex items-center justify-center'>
                                         <p className='text-lg lg:text-xl'
-                                        >Add extra sections with photo and text
+                                        >Add an extra section with photos, text, and links to your social media 
                                         </p>  
                                     </div>   
 

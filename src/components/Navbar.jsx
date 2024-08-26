@@ -1,8 +1,7 @@
 import { HiMenuAlt2 } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
 import ackblue from '../assets/ackblue.png';
 
-const Navbar = () => {
+const Navbar = ({ handleGo2Pricing, handleGo2Home }) => {
     return (
       <>
       <div className='-mt-20 h-20 z-50 backdrop-filter bg-opacity-30 backdrop-blur-lg bg-base'></div>
@@ -18,11 +17,8 @@ const Navbar = () => {
                 tabIndex={0} 
                 className="menu dropdown-content p-2 shadow bg-base-200 rounded-box w-52 mt-4"
                 >
-                    <li>
-                        <Link to="/"
-                        >Home
-                        </Link>
-                    </li>
+                    <li onClick={handleGo2Home} className='btn btn-ghost text-left w-full'>Home</li>
+                    <li onClick={handleGo2Pricing} className='btn btn-ghost text-left w-full'>Pricing</li>
                     {/*
                     <li>
                         <a

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
+import { FaAngleLeft, FaAngleRight, FaFacebook, FaInstagram } from "react-icons/fa";
+import { HiMenuAlt2 } from "react-icons/hi";
 import { useSwipeable } from 'react-swipeable';
 import bar1 from '../assets/bar1.avif';
 import bar2 from '../assets/bar2.avif';
@@ -28,6 +29,19 @@ const DemoAbout = () => {
     <>
     <div className="mockup-browser border-slate-600 bg-base-300 h-[500px] lg:h-[600px] max-w-[350px] md:max-w-sm lg:max-w-2xl rounded-3xl">
         <div className="mockup-browser-toolbar"></div>
+        
+        <nav className="sticky top-0 z-50 backdrop-filter bg-opacity-30 backdrop-blur-lg bg-base">
+            <div className="max-w-6xl mx-auto px-4">
+                <div className="flex items-center justify-between">
+                    <HiMenuAlt2 className='text-2xl lg:text-3xl' />
+                    
+                    <div className="flex flex-row justify-between gap-4 items-center">
+                        <FaFacebook className='text-2xl lg:text-3xl text-primary' />
+                        <FaInstagram className='text-2xl lg:text-3xl text-primary' />
+                    </div>
+                </div>
+            </div>
+        </nav>
 
         <div className="flex justify-center items-center">
             <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 items-center">

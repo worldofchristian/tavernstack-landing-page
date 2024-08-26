@@ -27,10 +27,6 @@ const Pricing = () => {
     <div className='flex items-center justify-center min-h-screen p-2'>
         <div className='max-w-6xl'>
             <div className="flex flex-col items-center">
-                <h2 className="text-5xl lg:text-6xl text-center font-bold mb-5">
-                    Pricing
-                </h2>
-
                 <div className="max-w-sm">
                     <p className="text-lg lg:text-xl text-center mx-8"
                     >Build your site for free, upgrade when you&apos;re ready to put it online
