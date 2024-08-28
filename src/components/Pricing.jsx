@@ -119,7 +119,7 @@ const Pricing = () => {
                             <FaClock className="text-xl" />
 
                             <p className="text-md"
-                            >Expires after 2 weeks
+                            >Expires after a week
                             </p>
                         </div>
 
