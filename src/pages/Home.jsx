@@ -3,7 +3,7 @@ import HeroAbout from "../components/HeroAbout";
 import Pricing from "../components/Pricing";
 import Navbar from "../components/Navbar";
 
-const Home = ({ margarit, of, wing, fry }) => {
+const Home = ({ cosmo, of, wing, fry, mule, margarit, ipa, guiness, corona, brus }) => {
   const scrollRef = useRef(null);
   const homeRef = useRef(null);
 
@@ -22,7 +22,10 @@ const Home = ({ margarit, of, wing, fry }) => {
     <div 
     ref={homeRef}
     >
-      <HeroAbout margarit={margarit} of={of} wing={wing} fry={fry} />
+      <HeroAbout 
+      cosmo={cosmo} of={of} wing={wing} fry={fry} mule={mule} margarit={margarit} 
+      guiness={guiness} ipa={ipa} corona={corona} brus={brus}
+      />
     </div>
 
     <div ref={scrollRef}><Pricing /></div>

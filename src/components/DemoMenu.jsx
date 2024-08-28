@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import { FaAngleDoubleRight, FaAngleDoubleUp, FaPepperHot, FaSearch, FaSeedling } from 'react-icons/fa';
 import { LuWheatOff } from 'react-icons/lu';
 
-const MenuItem = ({ name, description, price, image, spicy, gf }) => (
+const MenuItem = ({ name, description, price, image, spicy, gf, vegan }) => (
   <div className="flex flex-row items-center justify-between gap-5 w-[300px] lg:w-[520px] py-4 border-base-200">
     {image &&
-      <img src={image} alt={name} className="h-32 w-32 lg:h-40 lg:w-40 rounded-2xl object-cover" />
+      <img src={image} alt={name} className="h-32 w-32 lg:h-40 lg:w-40 shadow-lg rounded-2xl object-cover" />
     }
     
     <div className="flex flex-col text-right w-72">
       <div className='flex flex-row text-center items-center gap-3'>
+        <p className="text-lg lg:text-xl font-semibold text-right">{name}</p>
+      </div>
+      <div className='flex flex-row items-center gap-2 my-1'>
         {spicy && <FaPepperHot className="text-md text-red-500" />}
         {gf && <LuWheatOff className="text-md text-yellow-500" />}
-        {}
-        <p className="text-lg lg:text-xl font-semibold text-right">{name}</p>
+        {vegan && <FaSeedling className="text-md text-green-500" />}
       </div>
       <p className="text-md lg:text-base overflow-wrap text-left break-word mt-1">{description}</p>
       <p className="text-xl lg:text-2xl mt-2 text-left font-semibold">{price}</p>
@@ -21,18 +23,18 @@ const MenuItem = ({ name, description, price, image, spicy, gf }) => (
   </div>
 );
 
-const DemoMenu = ({ of, wing }) => {
+const DemoMenu = ({ of, wing, margarit, fry, cosmo, ipa, corona, guiness, brus }) => {
   const [activeCategory, setActiveCategory] = useState('cocktails');
   const barMenu = [
     { name: 'Old Fashioned', description: 'Bourbon, sugar, angostura bitters', price: 12, category: 'cocktails', image: of },
-    { name: 'Moscow Mule', description: 'Vodka, ginger beer, lime', price: 9, category: 'cocktails' },
-    { name: 'Margarita', description: 'Blanco tequila, triple sec, lime, sugar, salt', price: 10, category: 'cocktails' },
-    { name: 'Original 16', description: 'IPA, 5% ABV', price: 8, category: 'draft' },
-    { name: 'Stella', description: 'Pale lager, 4.6% ABV', price: 9, category: 'draft' },
-    { name: 'Guiness', description: 'Stout, 4.2% ABV', price: 9, category: 'draft' },
-    { name: 'Fries', description: 'Hand-cut fries, sea salt, ketchup', price: 5, category: 'snacks', gf: true },
-    { name: 'Wings', description: 'Buffalo, BBQ, Spicy, or honey garlic', price: 9, category: 'snacks', image: wing, spicy: true },
-    { name: 'Steak bites', description: 'Sirloin, garlic butter, parsley', price: 14, category: 'snacks', gf: true },
+    { name: 'Cosmo', description: 'Vodka, triple sec, lime, cranberry juice', price: 9, category: 'cocktails', image: cosmo, },
+    { name: 'Margarita', description: 'Blanco tequila, triple sec, lime, sugar, salt', price: 10, category: 'cocktails', image: margarit },
+    { name: 'Original 16', description: 'IPA, 5% ABV', price: 8, category: 'draft', image: ipa },
+    { name: 'Corona', description: 'Pale lager, 4.6% ABV', price: 9, category: 'draft', image: corona },
+    { name: 'Guiness', description: 'Stout, 4.2% ABV', price: 9, category: 'draft', image: guiness },
+    { name: 'Fries', description: 'Hand-cut fries, sea salt, ketchup', price: 5, category: 'snacks', image: fry, gf: true },
+    { name: 'Wings', description: 'BBQ, spicy, buffalo, or honey garlic', price: 9, category: 'snacks', image: wing, spicy: true },
+    { name: 'Bruschetta', description: 'Toasted bread, olive oil, tomatoes, basil, feta', price: 7, category: 'snacks', vegan: true, image: brus },
   ];
   const [isSearching, setIsSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -113,7 +115,7 @@ const DemoMenu = ({ of, wing }) => {
         
         <div className='flex items-center justify-center mt-2'>
           <div 
-          className='rounded-3xl bg-base-200 px-4 py-2 shadow-md w-[200px] cursor-pointer'
+          className='rounded-2xl bg-base-200 px-4 py-2 shadow-md w-[200px] cursor-pointer'
           onClick={() => setIsLegendOpen(!isLegendOpen)} 
           >
             <div className='flex flex-row gap-5 items-center mx-auto justify-center'>
@@ -162,6 +164,7 @@ const DemoMenu = ({ of, wing }) => {
                       image={item.image}
                       spicy={item.spicy}
                       gf={item.gf}
+                      vegan={item.vegan}
                     />
                   ))}
                 </div>
@@ -181,6 +184,7 @@ const DemoMenu = ({ of, wing }) => {
                           image={item.image}
                           spicy={item.spicy}
                           gf={item.gf}
+                          vegan={item.vegan}
                         />
                       ))
                     }

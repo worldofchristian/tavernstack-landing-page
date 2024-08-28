@@ -50,7 +50,7 @@ const Navbar = ({ handleGo2Pricing, handleGo2Home }) => {
             rel='noreferrer'
             >
               <button
-              className='btn btn-primary rounded-xl'
+              className='btn btn-primary btn-sm rounded-xl'
               >Log in</button>
             </a>
           </div>

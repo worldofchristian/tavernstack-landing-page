@@ -1,12 +1,12 @@
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaAngleRight, FaPalette } from 'react-icons/fa';
+import { FaPalette } from 'react-icons/fa';
 import DemoAbout from './DemoAbout';
 import DemoMenu from './DemoMenu';
 import { HiOutlineDocumentAdd } from "react-icons/hi";
 import PropTypes from 'prop-types';
 
-const HeroAbout = ({ margarit, of, wing, fry}) => {
+const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness, brus }) => {
     const options = useMemo(() => ['bars and restaurants', 'catering services', 'food trucks and pop-ups'], []);
     const [currentOption, setCurrentOption] = useState(options[0]);
     const [direction, setDirection] = useState(1); 
@@ -26,7 +26,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
 
     const slideVariants = {
         enter: (direction) => ({
-          x: direction > 0 ? '100%' : '-100%',
+          x: direction > 0 ? '20%' : '-20%',
           opacity: 0,
         }),
         center: {
@@ -34,7 +34,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
           opacity: 1,
         },
         exit: (direction) => ({
-          x: direction > 0 ? '-100%' : '100%',
+          x: direction > 0 ? '-20%' : '20%',
           opacity: 0,
         }),
     };
@@ -76,7 +76,7 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                             <div className="flex flex-col items-center">
                                 <div className="relative">
                                     <p className="mb-32 text-center text-lg lg:text-xl pl-0 ml-0"
-                                    >Start with a searchable menu that makes it easy for visitors to find what they're looking for
+                                    >Start with a searchable menu that turns website traffic into customers
                                     </p>
                                     <div className='flex items-center justify-center'>
                                         <div className="absolute top-1/2 h-[100px] border-[4px] border-base-300 rounded-full"></div>
@@ -87,7 +87,10 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                     </div>
 
                     <div className='flex items-center justify-center my-5'>
-                        <DemoMenu margarit={margarit} of={of} wing={wing} fry={fry} />
+                        <DemoMenu 
+                        cosmo={cosmo} margarit={margarit} of={of} wing={wing} fry={fry} mule={mule} 
+                        guiness={guiness} corona={corona} ipa={ipa} brus={brus}
+                        />
                     </div>
 
                     <div className='flex items-center justify-center'>
@@ -110,33 +113,29 @@ const HeroAbout = ({ margarit, of, wing, fry}) => {
                     </div>
 
                     <div className='flex items-center justify-center mt-32 mb-5 mx-4'>
-                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-32 items-center justify-center'>
+                        <div className='flex flex-col lg:flex-row gap-32 items-center justify-center'>
                             <div className='flex items-center justify-center'>
                                 <div className='flex flex-col text-center w-80'>
-                                    <div className='flex flex-col gap-3 justify-center items-center rounded-full lg:max-w-[470px] p-4'>
-                                        <HiOutlineDocumentAdd className='text-3xl lg:text-4xl text-secondary' />
+                                    <div className='flex flex-col gap-2 justify-center items-center lg:items-end rounded-full p-4'>
+                                        <HiOutlineDocumentAdd className='text-4xl lg:text-5xl text-secondary' />
                                         
-                                        <h2 className='text-2xl lg:text-3xl font-bold'
+                                        <h2 className='text-2xl lg:text-3xl lg:text-right font-bold'
                                         >Cover page
                                         </h2>
-                                    </div>
-                                    
-                                    <div className='flex items-center justify-center'>
-                                        <p className='text-lg lg:text-xl'
-                                        >Add an extra section with photos, text, and links to your social media 
+
+                                        <p className='text-lg lg:text-xl lg:text-right'
+                                        >Add extra photos, text, and links
                                         </p>  
                                     </div>   
 
-                                    <div className='flex flex-col gap-3 mt-20 justify-center items-center rounded-full lg:max-w-[470px] p-4'>
-                                        <FaPalette className='text-3xl lg:text-4xl text-secondary' />
+                                    <div className='flex flex-col gap-3 mt-20 justify-center items-center lg:items-end rounded-full p-4'>
+                                        <FaPalette className='text-4xl lg:text-5xl text-secondary' />
                                         
-                                        <h2 className='text-2xl lg:text-3xl font-bold'
+                                        <h2 className='text-2xl lg:text-3xl lg:text-right font-bold'
                                         >Design-free
                                         </h2>
-                                    </div>
-                                    
-                                    <div className='flex items-center justify-center'>
-                                        <p className='text-lg lg:text-xl'
+
+                                        <p className='text-lg lg:text-xl lg:text-right'
                                         >Your site grows automatically as you fill out your profile
                                         </p>  
                                     </div>                           
