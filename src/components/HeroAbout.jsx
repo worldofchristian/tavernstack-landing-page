@@ -5,6 +5,7 @@ import DemoAbout from './DemoAbout';
 import DemoMenu from './DemoMenu';
 import { HiOutlineDocumentAdd } from "react-icons/hi";
 import PropTypes from 'prop-types';
+import DemoPDF from './DemoPDF';
 
 const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness, brus }) => {
     const options = useMemo(() => ['bars and restaurants', 'catering services', 'food trucks and pop-ups'], []);
@@ -39,35 +40,29 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
         }),
     };
 
+
+
     return (
     <>
     <div className='flex items-center justify-center'>
-        <div className='w-full'>
-            <div className='flex items-center justify-center'>
-                <section className='w-full'>
-                    <div className='flex items-center justify-center'>
-                        <div className='flex flex-colm mt-20 lg:mt-32 p-2 max-w-[370px] items-center lg:max-w-3xl'>
-                            <h1 
-                            className="text-3xl lg:text-6xl font-bold text-center"
-                            >A website builder for
-                                <AnimatePresence mode="wait" custom={direction}>
-                                    <motion.div
-                                        key={currentOption}
-                                        custom={direction}
-                                        variants={slideVariants}
-                                        initial="enter"
-                                        animate="center"
-                                        exit="exit"
-                                        transition={{ duration: 0.35 }}
-                                    >
-                                        <span className='gradient-text text-transition'> {currentOption}</span>
-                                    </motion.div>
-                                </AnimatePresence>
-                            </h1>
-                        </div>
-                    </div>
-                </section>
-            </div>
+        <div className='flex flex-col mt-20 lg:mt-32 p-2 max-w-[370px] items-center justify-center lg:max-w-3xl'>
+            <h1 
+            className="text-3xl lg:text-6xl font-bold text-center"
+            >A website builder for
+                <AnimatePresence mode="wait" custom={direction}>
+                    <motion.div
+                        key={currentOption}
+                        custom={direction}
+                        variants={slideVariants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={{ duration: 0.35 }}
+                    >
+                        <span className='gradient-text text-transition'> {currentOption}</span>
+                    </motion.div>
+                </AnimatePresence>
+            </h1>
 
             <div className='flex item-center justify-center mt-32 mb-20'>
                 <div className='flex flex-col'>
@@ -88,8 +83,7 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
 
                     <div className='flex items-center justify-center my-5'>
                         <DemoMenu 
-                        cosmo={cosmo} margarit={margarit} of={of} wing={wing} fry={fry} mule={mule} 
-                        guiness={guiness} corona={corona} ipa={ipa} brus={brus}
+                        cosmo={cosmo} margarit={margarit} of={of} wing={wing} fry={fry} mule={mule} brus={brus}
                         />
                     </div>
 
@@ -101,12 +95,21 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                                 </div>
 
                                 <div className='flex flex-col items-center justify-start mt-32'>
-                                    <p className='text-lg lg:text-xl ml-3'
+                                    <p className='text-lg lg:text-xl'
                                     >Export as a ready-to-print PDF
                                     </p>
 
-                                    <p className='text-lg lg:text-xl text-center mt-5'
-                                    >Automatically converts your menu to a 8.5x11 or 11x17 sized document</p>
+                                    <p className='text-lg lg:text-xl mt-5 mb-10'
+                                    >Fits a regular 8.5x11 menu cover
+                                    </p>
+
+                                    <div className='flex items-center justify-center mb-10'>
+                                        <div className="absolute top-1/2 h-[100px] border-[4px] border-base-300 rounded-full"></div>
+                                    </div>
+
+                                    <DemoPDF
+                                    cosmo={cosmo} margarit={margarit} of={of} wing={wing} fry={fry} mule={mule} brus={brus}
+                                    />
                                 </div>
                             </div>
                         </div>      
@@ -124,7 +127,7 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                                         </h2>
 
                                         <p className='text-lg lg:text-xl lg:text-right'
-                                        >Add extra photos, text, and links
+                                        >Add widgets with photos, text, and links
                                         </p>  
                                     </div>   
 
@@ -149,7 +152,6 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     </>

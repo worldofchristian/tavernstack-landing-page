@@ -29,11 +29,11 @@ const DemoAbout = () => {
 
     return (
     <>
-    <div className="mockup-browser border-slate-600 bg-base-300 max-w-[350px] md:max-w-sm lg:max-w-2xl rounded-2xl">
+    <div className="mockup-browser border-slate-600 bg-base-300 w-[350px] lg:w-[600px] rounded-2xl">
         <div className="mockup-browser-toolbar"></div>
         
         <nav className="sticky top-0 bg-base">
-            <div className="max-w-[320px] lg:max-w-[600px] px-4">
+            <div className="max-w-[350px] lg:max-w-[600px] px-4">
                 <div className="flex items-center justify-between">
                     <HiMenuAlt2 className='text-2xl lg:text-3xl' />
                     
@@ -111,12 +111,10 @@ const DemoAbout = () => {
                         >Visit us
                         </h1>
 
-                        <p className="w-52 lg:w-40 text-center lg:text-left">Address Street<br /> Saskatoon, SK</p>
+                        <p className="w-52 lg:w-40 text-center lg:text-left">997 Seymour St<br /> Vancouver, BC</p>
                         
-                        <div className='flex flex-row items-center gap-1 mt-2 mb-5 lg:text-left'>
+                        <div className='flex flex-row items-center mt-2 mb-5 lg:text-left'>
                             <p className='underline cursor-pointer'>Google maps</p>
-
-                            <FaAngleDoubleRight className='text-lg mt-1' />
                         </div>
                     </div>
                 </div> 

@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { FaAngleDoubleRight, FaCheck, FaClock, FaPlus } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaAngleDoubleRight, FaCheck, FaPlus } from "react-icons/fa";
 import ack1 from '../assets/ack1.png';
 import ack22 from '../assets/ack22.png';
 import ack3 from '../assets/ack3.png';
+import './Pricing.css';
 
 const Pricing = () => {
     const originalPrice = 17;
@@ -14,8 +15,9 @@ const Pricing = () => {
         { code: 'AUD', flag: '🇦🇺', exchangeRate: 1.09 },
     ];
     const [selectedCurrency, setSelectedCurrency] = useState(currencies[0]);
+    const [locationCount, setLocationCount] = useState(3);
+    const [enterprisePrice, setEnterprisePrice] = useState();
 
-    // changes the currency and price
     const changeCurrency = (newCurrencyCode) => {
         const newCurrency = currencies.find(curr => curr.code === newCurrencyCode);
         if (newCurrency) {
@@ -24,6 +26,24 @@ const Pricing = () => {
             setPrice(Math.ceil(newPrice));
         }
     };
+
+    const handleLocationCountChange = (newCount) => {
+        setLocationCount(newCount);
+    };
+
+    const updateEnterprisePrice = () => {
+        if (locationCount <= 2) {
+            setEnterprisePrice('--');
+        } else {
+            const baseEnterprisePrice = locationCount * (originalPrice * 0.75);
+            const adjustedEnterprisePrice = baseEnterprisePrice * selectedCurrency.exchangeRate;
+            setEnterprisePrice(Math.floor(adjustedEnterprisePrice));
+        }
+    };
+
+    useEffect(() => {
+        updateEnterprisePrice();
+    }, [price, locationCount, selectedCurrency]);
 
   return (
     <>
@@ -74,17 +94,17 @@ const Pricing = () => {
                     </ul>
                 </div>
                 
-                <div className="flex flex-col lg:grid lg:grid-cols-3 items-center justify-center gap-20 lg:gap-32 mb-20">
-                    <div className="flex flex-col justify-between h-[500px] items-center w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
-                        <div className="flex items-center justify-center mt-10">
+                <div className="flex flex-col lg:grid lg:grid-cols-3 items-center justify-center gap-20 mb-20">
+                    <div className="flex flex-col justify-center h-[400px] items-center w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
+                        <div className="flex items-center justify-center mt-5">
                             <img src={ack3} alt='small stack icon' className="w-16 mb-5" />
                         </div>
 
-                        <h2 className="text-xl text-center font-bold mb-1">Starter</h2>
+                        <p className="text-lg text-center font-semibold">Starter</p>
+                        
+                        <h2 className="text-4xl text-center font-bold">Free</h2>
 
-                        <h2 className="text-3xl text-center font-bold">Free</h2>
-
-                        <div className="flex flex-col items-left mt-20">
+                        <div className="flex flex-col items-left mt-10 mb-5">
                             <div className="flex flex-row items-center gap-2">
                                 <FaCheck className="text-xl" />
 
@@ -101,29 +121,19 @@ const Pricing = () => {
                                 </p>
                             </div>
                         </div>
-
-                        <p className="text-md text-center mt-10">Try it out and see what works best for you</p>
                     </div>
 
-                    <div className="flex flex-col justify-between h-[500px] items-center w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
-                        <div className="flex items-center justify-center mt-10">
+                    <div className="flex flex-col justify-center h-[400px] items-center w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
+                        <div className="flex items-center justify-center mt-5">
                             <img src={ack22} alt='medium stack icon' className="w-16 mb-5" />
                         </div>
 
-                        <h2 className="text-xl text-center font-bold mb-1">Flash</h2>
+                        <p className="text-lg text-center font-semibold">Pro</p>
 
-                        <h2 className="text-3xl text-center font-bold"
-                        >${Math.floor(price/2)}<span className="text-lg font-semibold lg:text-xl ml-1">/once</span></h2>
+                        <h2 className="text-4xl text-center font-bold"
+                        >${price}<span className="text-lg font-semibold lg:text-xl ml-1">/month</span></h2>
 
-                        <div className="flex flex-row items-center mt-2 gap-2">
-                            <FaClock className="text-xl" />
-
-                            <p className="text-md"
-                            >Expires after a week
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col items-left mt-10">
+                        <div className="flex flex-col items-left mt-10 mb-5">
                             <div className="flex flex-row items-center gap-2 mt-2">
                                 <FaPlus className="text-xl" />
 
@@ -140,52 +150,56 @@ const Pricing = () => {
                                 </p>
                             </div>
                         </div>
-
-                        <p className="text-md text-center mt-10">Best for catering services and special events</p>
                     </div>
 
-                    <div className="flex flex-col justify-between h-[500px] w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
-                        <div className="flex items-center justify-center mt-10">
+                    <div className="flex flex-col justify-center h-[400px] w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
+                        <div className="flex items-center justify-center mt-5">
                             <img src={ack1} alt='large stack icon' className="w-16 mb-5" />
                         </div>
+                        
+                        <div>
+                            <p className="text-lg text-center font-semibold">Enterprise</p>
 
-                        <h2 className="text-xl text-center font-bold mb-1">Pro</h2>
-
-                        <h2 className="text-3xl text-center font-bold">
-                            $
-                            {price}
-                            <span className="text-lg font-semibold lg:text-xl ml-1">/month</span>
-                        </h2>
-
-                        <div className="flex flex-row items-center justify-center mt-2 gap-2">
-                            <FaClock className="text-xl" />
-
-                            <p className="text-md"
-                            >Non-expiring
-                            </p>
+                            <h2 className="text-4xl text-center font-bold">
+                                $
+                                {
+                                    enterprisePrice === '--' ? '--' :
+                                    enterprisePrice
+                                }
+                                <span className="text-lg font-semibold lg:text-xl ml-1">/month</span>
+                            </h2>
                         </div>
                         
-                        <div className="flex flex-col items-center justify-center mt-10">
+                        <div className="flex flex-col items-center justify-center mt-10 mb-5">
                             <div className="flex flex-col items-left">
                                 <div className="flex flex-row items-center gap-2">
                                     <FaPlus className="text-xl" />
 
                                     <p className="text-md"
-                                    >Website
+                                    >Multiple locations
                                     </p>
                                 </div>
 
-                                <div className="flex flex-row items-center gap-2 mt-2">
-                                    <FaPlus className="text-xl" />
+                                <div className="flex flex-row mt-2 items-center gap-2">
+                                    <FaPlus 
+                                        className="text-xl cursor-pointer" 
+                                        onClick={() => handleLocationCountChange(locationCount + 1)}
+                                    />
+
+                                    <input 
+                                        type="number" 
+                                        className="input input-bordered h-8 no-arrows rounded-md w-12" 
+                                        placeholder="3"
+                                        value={locationCount} 
+                                        onChange={(e) => handleLocationCountChange(Number(e.target.value))}
+                                    />
 
                                     <p className="text-md"
-                                    >Cover page
+                                    >{locationCount === 1 ? 'location' : 'locations'}
                                     </p>
                                 </div>
                             </div>
                         </div>
-
-                        <p className="text-md text-center mt-10">Best for bars, restaurants, and other non-seasonal businesses</p>
                     </div>
                 </div>
             </div>

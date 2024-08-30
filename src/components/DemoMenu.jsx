@@ -23,15 +23,12 @@ const MenuItem = ({ name, description, price, image, spicy, gf, vegan }) => (
   </div>
 );
 
-const DemoMenu = ({ of, wing, margarit, fry, cosmo, ipa, corona, guiness, brus }) => {
+const DemoMenu = ({ of, wing, margarit, fry, cosmo, brus }) => {
   const [activeCategory, setActiveCategory] = useState('cocktails');
   const barMenu = [
     { name: 'Old Fashioned', description: 'Bourbon, sugar, angostura bitters', price: 12, category: 'cocktails', image: of },
     { name: 'Cosmo', description: 'Vodka, triple sec, lime, cranberry juice', price: 9, category: 'cocktails', image: cosmo, },
     { name: 'Margarita', description: 'Blanco tequila, triple sec, lime, sugar, salt', price: 10, category: 'cocktails', image: margarit },
-    { name: 'Original 16', description: 'IPA, 5% ABV', price: 8, category: 'draft', image: ipa },
-    { name: 'Corona', description: 'Pale lager, 4.6% ABV', price: 9, category: 'draft', image: corona },
-    { name: 'Guiness', description: 'Stout, 4.2% ABV', price: 9, category: 'draft', image: guiness },
     { name: 'Fries', description: 'Hand-cut fries, sea salt, ketchup', price: 5, category: 'snacks', image: fry, gf: true },
     { name: 'Wings', description: 'BBQ, spicy, buffalo, or honey garlic', price: 9, category: 'snacks', image: wing, spicy: true },
     { name: 'Bruschetta', description: 'Toasted bread, olive oil, tomatoes, basil, feta', price: 7, category: 'snacks', vegan: true, image: brus },
