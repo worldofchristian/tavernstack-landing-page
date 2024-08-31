@@ -5,6 +5,31 @@ import ack22 from '../assets/ack22.png';
 import ack3 from '../assets/ack3.png';
 import './Pricing.css';
 
+const Currency = ({ currencies, changeCurrency, selectedCurrency }) => {
+    return (
+        <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn rounded-2xl m-1">
+                <span className="flex items-center">
+                    {selectedCurrency.flag} {selectedCurrency.code} 
+                    <FaAngleDoubleRight className="ml-2 text-neutral-focus"/>
+                </span>
+            </div>
+
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                {currencies.map((curr) => (
+                    <li key={curr.code}>
+                        <a onClick={() => changeCurrency(curr.code)}>
+                            <span className="flex items-center">
+                                {curr.flag} {curr.code}
+                            </span>
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
 const Pricing = () => {
     const originalPrice = 17;
     const [price, setPrice] = useState(originalPrice);
@@ -52,59 +77,42 @@ const Pricing = () => {
             <div className="flex flex-col items-center">
                 <h1 className="text-3xl lg:text-6xl font-bold text-center mt-20 mb-5"
                 >Pricing</h1>
-
+                
                 <div className="max-w-sm">
                     <p className="text-lg lg:text-xl text-center mx-8"
                     >Build your site for free, upgrade when you&apos;re ready to put it online
                     </p>
                 </div>
 
-                <div className="flex items-center justify-center mt-10">
-                    <div className="max-w-xs">
-                        <a
-                        href="https://app.tavernstack.com"
-                        target="_blank"
-                        rel="noreferrer"
-                        >
-                            <button className="btn btn-primary rounded-2xl"
-                            >Create account <FaAngleDoubleRight />
-                            </button>
-                        </a>
-                    </div>
-                </div>
+                <div className="flex flex-col lg:grid lg:grid-cols-3 items-center justify-center gap-20 my-20">
+                    <div className="flex flex-col justify-between h-[475px] items-center w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
+                        <div>
+                            <div className="flex items-center justify-center">
+                                <img src={ack3} alt='small stack icon' className="w-16 mb-5" />
+                            </div>
 
-                <div className="dropdown mt-5 mb-20">
-                    <div tabIndex={0} role="button" className="btn rounded-2xl m-1">
-                        <span className="flex items-center">
-                            {selectedCurrency.flag} {selectedCurrency.code} 
-                            <FaAngleDoubleRight className="ml-2 text-neutral-focus"/>
-                        </span>
-                    </div>
-
-                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                        {currencies.map((curr) => (
-                            <li key={curr.code}>
-                                <a onClick={() => changeCurrency(curr.code)}>
-                                    <span className="flex items-center">
-                                        {curr.flag} {curr.code}
-                                    </span>
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                
-                <div className="flex flex-col lg:grid lg:grid-cols-3 items-center justify-center gap-20 mb-20">
-                    <div className="flex flex-col justify-center h-[400px] items-center w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
-                        <div className="flex items-center justify-center mt-5">
-                            <img src={ack3} alt='small stack icon' className="w-16 mb-5" />
+                            <p className="text-lg text-center font-semibold">Starter</p>
+                            
+                            <h2 className="text-4xl text-center font-bold">Free</h2>
                         </div>
 
-                        <p className="text-lg text-center font-semibold">Starter</p>
-                        
-                        <h2 className="text-4xl text-center font-bold">Free</h2>
+                        <div className="flex items-center justify-center mt-16">
+                            <div className="flex flex-col items-center justify-center">
+                                <div className="max-w-xs">
+                                    <a
+                                    href="https://app.tavernstack.com"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >
+                                        <button className="btn btn-primary rounded-2xl"
+                                        >Create account <FaAngleDoubleRight />
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-                        <div className="flex flex-col items-left mt-10 mb-5">
+                        <div className="flex flex-col items-left">
                             <div className="flex flex-row items-center gap-2">
                                 <FaCheck className="text-xl" />
 
@@ -123,17 +131,43 @@ const Pricing = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col justify-center h-[400px] items-center w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
-                        <div className="flex items-center justify-center mt-5">
-                            <img src={ack22} alt='medium stack icon' className="w-16 mb-5" />
+                    <div className="flex flex-col justify-between h-[475px] items-center w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
+                        <div>
+                            <div className="flex items-center justify-center">
+                                <img src={ack22} alt='medium stack icon' className="w-16 mb-5" />
+                            </div>
+
+                            <p className="text-lg text-center font-semibold">Pro</p>
+                                
+                            <h2 className="text-4xl text-center font-bold mb-2"
+                            >${price}<span className="text-lg font-semibold lg:text-xl ml-1">/month</span></h2>
+
+                            <div className="flex items-center justify-center">
+                                <Currency 
+                                    currencies={currencies}    
+                                    selectedCurrency={selectedCurrency} 
+                                    changeCurrency={changeCurrency} 
+                                />
+                            </div>
                         </div>
 
-                        <p className="text-lg text-center font-semibold">Pro</p>
+                        <div className="flex items-center justify-center my-5">
+                            <div className="flex flex-col items-center justify-center">
+                                <div className="max-w-xs">
+                                    <a
+                                    href="https://app.tavernstack.com"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >
+                                        <button className="btn btn-primary rounded-2xl"
+                                        >Create account <FaAngleDoubleRight />
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
-                        <h2 className="text-4xl text-center font-bold"
-                        >${price}<span className="text-lg font-semibold lg:text-xl ml-1">/month</span></h2>
-
-                        <div className="flex flex-col items-left mt-10 mb-5">
+                        <div className="flex flex-col items-left">
                             <div className="flex flex-row items-center gap-2 mt-2">
                                 <FaPlus className="text-xl" />
 
@@ -152,25 +186,51 @@ const Pricing = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col justify-center h-[400px] w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
-                        <div className="flex items-center justify-center mt-5">
-                            <img src={ack1} alt='large stack icon' className="w-16 mb-5" />
-                        </div>
-                        
+                    <div className="flex flex-col items-center justify-between h-[475px] w-[300px] p-10 bg-base-300 rounded-2xl shadow-md">
                         <div>
-                            <p className="text-lg text-center font-semibold">Enterprise</p>
+                            <div className="flex items-center justify-center">
+                                <img src={ack1} alt='large stack icon' className="w-16 mb-5" />
+                            </div>
+                            
+                            <div>
+                                <p className="text-lg text-center font-semibold">Enterprise</p>
 
-                            <h2 className="text-4xl text-center font-bold">
-                                $
-                                {
-                                    enterprisePrice === '--' ? '--' :
-                                    enterprisePrice
-                                }
-                                <span className="text-lg font-semibold lg:text-xl ml-1">/month</span>
-                            </h2>
+                                <h2 className="text-4xl text-center font-bold mb-2">
+                                    $
+                                    {
+                                        enterprisePrice === '--' ? '--' :
+                                        enterprisePrice
+                                    }
+                                    <span className="text-lg font-semibold lg:text-xl ml-1">/month</span>
+                                </h2>
+                            </div>
+
+                            <div className="flex items-center justify-center">
+                                <Currency 
+                                    currencies={currencies} 
+                                    selectedCurrency={selectedCurrency} 
+                                    changeCurrency={changeCurrency} 
+                                />
+                            </div>
+                        </div>
+
+                        <div className="flex items-center justify-center my-5">
+                            <div className="flex flex-col items-center justify-center">
+                                <div className="max-w-xs">
+                                    <a
+                                    href="https://app.tavernstack.com"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >
+                                        <button className="btn btn-primary rounded-2xl"
+                                        >Create account <FaAngleDoubleRight />
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div className="flex flex-col items-center justify-center mt-10 mb-5">
+                        <div className="flex flex-col items-center justify-center mt-1">
                             <div className="flex flex-col items-left">
                                 <div className="flex flex-row items-center gap-2">
                                     <FaPlus className="text-xl" />

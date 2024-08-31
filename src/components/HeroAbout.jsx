@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import DemoPDF from './DemoPDF';
 
 const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness, brus }) => {
-    const options = useMemo(() => ['bars and restaurants', 'catering services', 'food trucks and pop-ups'], []);
+    const options = useMemo(() => ['bars and restaurants', 'catering services', 'nightclubs and venues'], []);
     const [currentOption, setCurrentOption] = useState(options[0]);
     const [direction, setDirection] = useState(1); 
 
@@ -20,7 +20,7 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                 setDirection(1); // slide to the left
                 return options[nextIndex];
             });
-        }, 2900); 
+        }, 2500); 
 
         return () => clearInterval(interval);
     }, [options]);
@@ -95,17 +95,13 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                                 </div>
 
                                 <div className='flex flex-col items-center justify-start mt-32'>
-                                    <p className='text-lg lg:text-xl'
-                                    >Export as a ready-to-print PDF
-                                    </p>
+                                    <h2 className='text-3xl mb-5 font-bold text-center'
+                                    >PDF export
+                                    </h2>
 
-                                    <p className='text-lg lg:text-xl mt-5 mb-10'
-                                    >Fits a regular 8.5x11 menu cover
+                                    <p className='text-lg text-center mb-10'
+                                    >Download your menu as a printable document
                                     </p>
-
-                                    <div className='flex items-center justify-center mb-10'>
-                                        <div className="absolute top-1/2 h-[100px] border-[4px] border-base-300 rounded-full"></div>
-                                    </div>
 
                                     <DemoPDF
                                     cosmo={cosmo} margarit={margarit} of={of} wing={wing} fry={fry} mule={mule} brus={brus}
@@ -122,14 +118,14 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                                     <div className='flex flex-col gap-2 justify-center items-center lg:items-end rounded-full p-4'>
                                         <HiOutlineDocumentAdd className='text-4xl lg:text-5xl text-secondary' />
                                         
-                                        <h2 className='text-2xl lg:text-3xl lg:text-right font-bold'
+                                        <h2 className='text-3xl mb-5 lg:text-right font-bold'
                                         >Cover page
                                         </h2>
 
                                         <p className='text-lg lg:text-xl lg:text-right'
-                                        >Add widgets with photos, text, and links
+                                        >Add photos, links, and widgets
                                         </p>  
-                                    </div>   
+                                    </div>
 
                                     <div className='flex flex-col gap-3 mt-20 justify-center items-center lg:items-end rounded-full p-4'>
                                         <FaPalette className='text-4xl lg:text-5xl text-secondary' />
@@ -141,7 +137,7 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                                         <p className='text-lg lg:text-xl lg:text-right'
                                         >Your site grows automatically as you fill out your profile
                                         </p>  
-                                    </div>                           
+                                    </div>                       
                                 </div>
                             </div>
                             

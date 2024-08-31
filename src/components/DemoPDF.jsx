@@ -23,15 +23,11 @@ const MenuItem = ({ name, description, price, spicy, gf, vegan }) => (
 
 const DemoPDF = ({ of, wing, margarit, fry, cosmo, brus }) => {
     const [titleFont, setTitleFont] = useState("New Amsterdam");
-    const [bodyFont, setBodyFont] = useState("Roboto");
-    const [divider, setDivider] = useState("None");
     const [isSocials, setIsSocials] = useState(true);
     const [isLogo, setIsLogo] = useState(true);
     const [isLegend, setIsLegend] = useState(true);
     const [isMessage, setIsMessage] = useState(false);
-
     const fonts = ["Roboto", "Times New Roman", "New Amsterdam", "Ubuntu", "Garamond"];
-    const dividers = ["None", "Fancy", "Wavy", "Solid", "Dashed"];
     const barMenu = [
         { name: 'Old Fashioned', description: 'Bourbon, sugar, angostura bitters', price: 12, category: 'cocktails', image: of },
         { name: 'Cosmo', description: 'Vodka, triple sec, lime, cranberry juice', price: 9, category: 'cocktails', image: cosmo, },
@@ -40,7 +36,6 @@ const DemoPDF = ({ of, wing, margarit, fry, cosmo, brus }) => {
         { name: 'Wings', description: 'BBQ, spicy, buffalo, or honey garlic', price: 9, category: 'snacks', image: wing, spicy: true },
         { name: 'Bruschetta', description: 'Toasted bread, olive oil, tomatoes, basil, feta', price: 7, category: 'snacks', vegan: true, image: brus },
     ];
-
     // Get the list of categories
     const categories = [...new Set(barMenu.map(item => item.category))];
 
@@ -65,10 +60,10 @@ const DemoPDF = ({ of, wing, margarit, fry, cosmo, brus }) => {
 
     return (
         <>
-        <div className="mockup-browser border-slate-600 bg-base-300 w-[370px] lg:w-[1000px] rounded-2xl">
+        <div className="mockup-browser border-slate-600 bg-base-300 w-[370px] lg:w-[800px] rounded-2xl">
             <div className="mockup-browser-toolbar"></div>
 
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-10 p-10 mb-10 lg:gap-20">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 p-10 lg:px-20 mb-10">
                 <div className="flex flex-col items-center justify-center">
                     <div className="flex flex-row justify-between items-center w-full mb-5 px-5">
                         <div className="flex flex-col items-center text-center mb-2">
@@ -109,7 +104,11 @@ const DemoPDF = ({ of, wing, margarit, fry, cosmo, brus }) => {
 
                     <div className='bg-slate-200 rounded-2xl px-5 py-5 shadow-lg text-black h-[470px] lg:h-[550px] w-[320px] lg:w-[385px] overflow-hidden'>
                         <div className="flex items-center justify-center">
-                            <div className="flex flex-row justify-between items-center mt-2 mb-5 w-full">
+                            <div 
+                            className={`flex flex-row
+                                ${!isSocials && !isLegend && isLogo ? 'justify-center' : 'justify-between'}
+                            items-center mt-2 mb-5 w-full`}
+                            >
                                 {isSocials && (
                                     <div className="flex flex-col items-left">
                                         <div className="flex flex-row items-left gap-2">
@@ -156,7 +155,7 @@ const DemoPDF = ({ of, wing, margarit, fry, cosmo, brus }) => {
 
                         <div className="grid grid-cols-2 gap-4 justify-center">
                         {categories.map((category, index) => (
-                            <div key={index} className="mb-5">
+                            <div key={index} className="flex flex-col items-center justify-start mb-5">
                                 <h2 
                                 className={`text-2xl text-left px-2 mb-2 font-bold
                                     ${titleFont == 'New Amsterdam' && 'new-amsterdam-regular text-3xl'} 
@@ -175,7 +174,7 @@ const DemoPDF = ({ of, wing, margarit, fry, cosmo, brus }) => {
                     </div>
                 </div>
 
-                <div className="flex flex-col items-center justify-between h-[400px] lg:h-[500px] w-64">
+                <div className="flex flex-col items-center justify-between w-64">
                     <div>
                         <p className="text-left">Title Font</p>
 
@@ -189,38 +188,12 @@ const DemoPDF = ({ of, wing, margarit, fry, cosmo, brus }) => {
                                 <option key={index} value={font}>{font}</option>
                             ))}
                         </select>
-
-                        <p className="text-left mt-5">Body Font</p>
-
-                        <select
-                        className="select select-bordered rounded-2xl w-full mt-2"
-                        value={bodyFont}
-                        name="bodyFont"
-                        onChange={(e) => handleChange(e)}
-                        >
-                            {fonts.map((font, index) => (
-                                <option key={index} value={font}>{font}</option>
-                            ))}
-                        </select>
-
-                        <p className="text-left mt-5">Divider</p>
-
-                        <select
-                        className="select select-bordered rounded-2xl w-full mt-2"
-                        value={divider}
-                        name="divider"
-                        onChange={(e) => handleChange(e)}
-                        >
-                            {dividers.map((divi, index) => (
-                                <option key={index} value={divi}>{divi}</option>
-                            ))}
-                        </select>
                     </div>
                     
                     {isMessage && ( <><p className="text-md text-center font-medium mt-5">That would have downloaded!</p></> )}
                     
                     <button 
-                        className="btn btn-primary rounded-2xl w-44"
+                        className="btn btn-primary rounded-2xl mt-5 w-44"
                         onClick={handleMessage}
                     >
                         Download PDF 
