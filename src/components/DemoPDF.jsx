@@ -60,10 +60,10 @@ const DemoPDF = ({ of, wing, margarit, fry, cosmo, brus }) => {
 
     return (
         <>
-        <div className="mockup-browser border-slate-600 bg-base-300 w-[370px] lg:w-[800px] rounded-2xl">
+        <div className="mockup-browser border-slate-600 bg-base-300 w-[370px] lg:w-[700px] rounded-2xl">
             <div className="mockup-browser-toolbar"></div>
 
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 p-10 lg:px-20 mb-10">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-10 p-5 lg:px-20 mb-10">
                 <div className="flex flex-col items-center justify-center">
                     <div className="flex flex-row justify-between items-center w-full mb-5 px-5">
                         <div className="flex flex-col items-center text-center mb-2">

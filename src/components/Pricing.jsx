@@ -96,23 +96,7 @@ const Pricing = () => {
                             <h2 className="text-4xl text-center font-bold">Free</h2>
                         </div>
 
-                        <div className="flex items-center justify-center mt-16">
-                            <div className="flex flex-col items-center justify-center">
-                                <div className="max-w-xs">
-                                    <a
-                                    href="https://app.tavernstack.com"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    >
-                                        <button className="btn btn-primary rounded-2xl"
-                                        >Create account <FaAngleDoubleRight />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col items-left">
+                        <div className="flex flex-col items-left mt-16">
                             <div className="flex flex-row items-center gap-2">
                                 <FaCheck className="text-xl" />
 
@@ -127,6 +111,22 @@ const Pricing = () => {
                                 <p className="text-md"
                                 >PDF export
                                 </p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center justify-center">
+                            <div className="flex flex-col items-center justify-center">
+                                <div className="max-w-xs">
+                                    <a
+                                    href="https://app.tavernstack.com"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >
+                                        <button className="btn btn-primary rounded-2xl"
+                                        >Create account <FaAngleDoubleRight />
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -151,23 +151,7 @@ const Pricing = () => {
                             </div>
                         </div>
 
-                        <div className="flex items-center justify-center my-5">
-                            <div className="flex flex-col items-center justify-center">
-                                <div className="max-w-xs">
-                                    <a
-                                    href="https://app.tavernstack.com"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    >
-                                        <button className="btn btn-primary rounded-2xl"
-                                        >Create account <FaAngleDoubleRight />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col items-left">
+                        <div className="flex flex-col items-left my-5">
                             <div className="flex flex-row items-center gap-2 mt-2">
                                 <FaPlus className="text-xl" />
 
@@ -182,6 +166,22 @@ const Pricing = () => {
                                 <p className="text-md"
                                 >Cover page
                                 </p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center justify-center">
+                            <div className="flex flex-col items-center justify-center">
+                                <div className="max-w-xs">
+                                    <a
+                                    href="https://app.tavernstack.com"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >
+                                        <button className="btn btn-primary rounded-2xl"
+                                        >Create account <FaAngleDoubleRight />
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -213,24 +213,8 @@ const Pricing = () => {
                                 />
                             </div>
                         </div>
-
-                        <div className="flex items-center justify-center my-5">
-                            <div className="flex flex-col items-center justify-center">
-                                <div className="max-w-xs">
-                                    <a
-                                    href="https://app.tavernstack.com"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    >
-                                        <button className="btn btn-primary rounded-2xl"
-                                        >Create account <FaAngleDoubleRight />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                         
-                        <div className="flex flex-col items-center justify-center mt-1">
+                        <div className="flex flex-col items-center justify-center mt-6 mb-5">
                             <div className="flex flex-col items-left">
                                 <div className="flex flex-row items-center gap-2">
                                     <FaPlus className="text-xl" />
@@ -257,6 +241,22 @@ const Pricing = () => {
                                     <p className="text-md"
                                     >{locationCount === 1 ? 'location' : 'locations'}
                                     </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center justify-center">
+                            <div className="flex flex-col items-center justify-center">
+                                <div className="max-w-xs">
+                                    <a
+                                    href="https://app.tavernstack.com"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >
+                                        <button className="btn btn-primary rounded-2xl"
+                                        >Create account <FaAngleDoubleRight />
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

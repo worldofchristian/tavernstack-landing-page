@@ -4,7 +4,7 @@ import ackblue from '../assets/ackblue.png';
 const Navbar = ({ handleGo2Pricing, handleGo2Home }) => {
     return (
       <>
-      <nav className="sticky top-0 z-50 bg-base-100 shadow-lg">
+      <nav className="sticky top-0 z-50 bg-base-100 shadow-md">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="dropdown dropdown-bottom lg:dropdown-left">

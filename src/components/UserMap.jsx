@@ -17,9 +17,9 @@ const UserMap = () => {
     <div className="relative z-0">
         <MapContainer 
         center={centerCoordinates} 
-        zoom={18} 
-        className='rounded-2xl w-full'
-        style={{ height: "200px", width: "280px" }}
+        className='rounded-2xl z-1'
+        zoom={18}
+        style={{ height: '280px', width: '380px' }} 
         dragging={false}
         scrollWheelZoom={false}
         >

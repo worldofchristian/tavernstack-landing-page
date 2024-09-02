@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaPalette } from 'react-icons/fa';
+import { FaPalette, FaRegFilePdf } from 'react-icons/fa';
 import DemoAbout from './DemoAbout';
 import DemoMenu from './DemoMenu';
 import { HiOutlineDocumentAdd } from "react-icons/hi";
@@ -59,7 +59,7 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                         exit="exit"
                         transition={{ duration: 0.35 }}
                     >
-                        <span className='gradient-text text-transition'> {currentOption}</span>
+                        <span className='gradient-text font-bold text-transition'> {currentOption}</span>
                     </motion.div>
                 </AnimatePresence>
             </h1>
@@ -87,38 +87,40 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                         />
                     </div>
 
-                    <div className='flex items-center justify-center'>
-                        <div className='flex flex-col w-80'>
-                            <div className='relative'>
-                                <div className='flex items-center justify-center'>
-                                    <div className="absolute top-0 h-[100px] border-[4px] border-base-300 rounded-full"></div>
+                    <div className='flex items-center justify-center mt-32 mx-4'>
+                        <div className='flex flex-col lg:flex-row gap-32 items-center justify-center'>
+                            <div className='flex items-center justify-center'>
+                                <div className='flex flex-col text-center w-80'>
+                                    <div className='flex flex-col gap-2 justify-center items-center lg:items-end rounded-full p-4'>
+                                        <FaRegFilePdf className='text-4xl lg:text-5xl text-secondary' />
+                                        
+                                        <h2 className='text-3xl font-bold text-center lg:text-right'
+                                        >PDF export
+                                        </h2>
+
+                                        <p className='text-lg text-center lg:text-right'
+                                        >Download your menu as a printable document
+                                        </p>
+                                    </div>
                                 </div>
+                            </div>
 
-                                <div className='flex flex-col items-center justify-start mt-32'>
-                                    <h2 className='text-3xl mb-5 font-bold text-center'
-                                    >PDF export
-                                    </h2>
-
-                                    <p className='text-lg text-center mb-10'
-                                    >Download your menu as a printable document
-                                    </p>
-
-                                    <DemoPDF
-                                    cosmo={cosmo} margarit={margarit} of={of} wing={wing} fry={fry} mule={mule} brus={brus}
-                                    />
-                                </div>
+                            <div className='flex z-1 items-center justify-center'>
+                                <DemoPDF
+                                cosmo={cosmo} margarit={margarit} of={of} wing={wing} fry={fry} mule={mule} brus={brus}
+                                />
                             </div>
                         </div>      
                     </div>
 
-                    <div className='flex items-center justify-center mt-32 mb-5 mx-4'>
+                    <div className='flex items-center justify-center mt-32 mx-4'>
                         <div className='flex flex-col lg:flex-row gap-32 items-center justify-center'>
                             <div className='flex items-center justify-center'>
                                 <div className='flex flex-col text-center w-80'>
                                     <div className='flex flex-col gap-2 justify-center items-center lg:items-end rounded-full p-4'>
                                         <HiOutlineDocumentAdd className='text-4xl lg:text-5xl text-secondary' />
                                         
-                                        <h2 className='text-3xl mb-5 lg:text-right font-bold'
+                                        <h2 className='text-3xl lg:text-right font-bold'
                                         >Cover page
                                         </h2>
 
@@ -127,10 +129,10 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                                         </p>  
                                     </div>
 
-                                    <div className='flex flex-col gap-3 mt-20 justify-center items-center lg:items-end rounded-full p-4'>
+                                    <div className='flex flex-col gap-2 mt-20 justify-center items-center lg:items-end rounded-full p-4'>
                                         <FaPalette className='text-4xl lg:text-5xl text-secondary' />
                                         
-                                        <h2 className='text-2xl lg:text-3xl lg:text-right font-bold'
+                                        <h2 className='text-3xl lg:text-3xl lg:text-right font-bold'
                                         >Design-free
                                         </h2>
 

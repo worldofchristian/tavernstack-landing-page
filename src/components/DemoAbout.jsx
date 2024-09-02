@@ -3,9 +3,9 @@ import { FaAngleLeft, FaAngleRight, FaFacebook, FaInstagram, FaAngleDoubleRight 
 import { FaLocationDot } from "react-icons/fa6";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { useSwipeable } from 'react-swipeable';
-import bar1 from '../assets/bar1.avif';
-import bar2 from '../assets/bar2.avif';
-import bar3 from '../assets/bar3.avif';
+import bar1 from '../assets/bar1.jpg';
+import bar2 from '../assets/bar2.jpg';
+import bar3 from '../assets/bar3.jpg';
 import UserMap from "./UserMap";
 
 const DemoAbout = () => {
@@ -29,11 +29,11 @@ const DemoAbout = () => {
 
     return (
     <>
-    <div className="mockup-browser border-slate-600 bg-base-300 w-[350px] lg:w-[600px] rounded-2xl">
+    <div className="mockup-browser border-slate-600 bg-base-300 w-[350px] lg:w-[700px] rounded-2xl">
         <div className="mockup-browser-toolbar"></div>
         
         <nav className="sticky top-0 bg-base">
-            <div className="max-w-[350px] lg:max-w-[600px] px-4">
+            <div className="max-w-[350px] lg:max-w-[700px] px-5">
                 <div className="flex items-center justify-between">
                     <HiMenuAlt2 className='text-2xl lg:text-3xl' />
                     
@@ -47,14 +47,14 @@ const DemoAbout = () => {
         </nav>
 
         <div className="flex items-center justify-center">
-            <div className="flex flex-col items-center w-[500px] mt-5 p-4">
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-5 lg:gap-10">
-                    <div className='flex flex-col mt-10 lg:mt-[-20px]'>
-                        <h1 className="text-3xl lg:text-4xl font-bold text-center lg:text-right"
+            <div className="flex flex-col items-center mt-5 p-4">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-5 px-4 lg:gap-10">
+                    <div className='flex flex-col'>
+                        <h1 className="text-3xl lg:text-4xl mt-10 lg:mt-0 lg:mt-0 font-bold text-center lg:text-right"
                         >Your bar
                         </h1>
 
-                        <p className="text-center lg:text-right mt-2 overflow-hidden w-52"
+                        <p className="text-center lg:text-right mt-2 lg:mb-10 overflow-hidden w-52"
                         >Add a cool cover page to your cool bar
                         </p>
                     </div>
@@ -73,7 +73,7 @@ const DemoAbout = () => {
                                     >
                                         <img 
                                         src={photo} alt={`Feature ${index + 1}`} 
-                                        className="rounded-2xl object-cover" />
+                                        className="rounded-2xl w-full object-cover" />
                                     </div>
                                 ))}
                             </div>
@@ -101,7 +101,7 @@ const DemoAbout = () => {
                     </div>   
                 </div>   
                 
-                <div className='flex flex-col lg:flex-row items-center justify-center mt-10 mb-10 lg:mb-16 gap-5 lg:gap-10 w-full px-4'>
+                <div className='flex flex-col lg:flex-row items-center justify-between mt-10 mb-10 lg:mb-16 gap-5 lg:gap-10 lg:w-full px-4'>
                     <UserMap />
 
                     <div className='flex flex-col items-center lg:items-start justify-center mt-5 lg:mt-2'>
