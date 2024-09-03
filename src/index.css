@@ -60,3 +60,39 @@
     -webkit-text-fill-color: transparent;
     color: transparent;
 }
+
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-search-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-search {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    padding-right: 2.5rem; /* Space for the custom arrow */
+}
+
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    padding-right: 2.5rem; /* Space for the custom arrow */
+}
+
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translateY(-50%);
+    pointer-events: none; /* Make sure it doesn't block click events */
+    color: oklch(var(--bc)); /* base-content */
+    font-size: 1.1rem; 
+}

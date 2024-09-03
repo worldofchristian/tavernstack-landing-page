@@ -71,51 +71,44 @@ const DemoMenu = ({ of, wing, margarit, fry, cosmo, brus }) => {
         <div className="mockup-browser-toolbar"></div>
         
         <div className='flex items-center justify-center'>
-          <div className='flex flex-row justify-between gap-2 mt-5 items-center w-72 overflow-hidden'>
-            {!isSearching ? (
-              <FaSearch 
-                className='text-2xl cursor-pointer' 
-                onClick={handleSearch}
-              />
-            ) : (
-              <button 
-              className='btn btn-outline rounded-xl w-[60px]'
-              onClick={handleSearch}
-              >Cancel</button>
-            )}
-            
-            {isSearching ? (
-              <>
-              <input
-                type="search"
-                placeholder="Type here"
-                className="input input-bordered rounded-xl w-full"
+          <div className='flex flex-col justify-center gap-2 mt-5 w-full items-center w-72 overflow-hidden'>
+            <div className='custom-search-wrapper'>
+              <input 
+                type="text" 
+                className="custom-search input text-lg input-bordered h-10 rounded-2xl w-[265px] mt-2" 
+                placeholder="Search" 
                 value={searchQuery}
                 onChange={handleSearchChange}
               />
-              </>
-            ) : (
-              <select 
-                className="select select-bordered rounded-xl w-full"
-                value={activeCategory}
-                onChange={handleCategoryChange}
-              >
-                {categories.map((category) => (
-                  <option key={category} value={category}>
-                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                  </option>
-                ))}
-              </select>
-            )}
+
+              <FaSearch className='custom-arrow mr-2 mt-1' onClick={handleSearch} />
+            </div>
           </div>
+        </div>
+        
+        <div className='flex items-center justify-center gap-2 mt-4'>
+          {categories.map((category) => (
+            <div 
+            key={category} 
+            value={category} 
+            className={
+              `rounded-2xl py-1 bg-base-300 w-32 h-9 text-center border-2 cursor-pointer
+              ${activeCategory == category ? 'border-primary' : 'border-base-100'}`
+            }
+            onChange={handleCategoryChange}
+            onClick={() => setActiveCategory(category)}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </div>
+          ))}
         </div>
         
         <div className='flex items-center justify-center mt-2'>
           <div 
-          className='rounded-2xl bg-base-200 px-4 py-2 shadow-md w-[200px] cursor-pointer'
+          className={`rounded-2xl bg-base-200 px-4 py-1 shadow-md ${!isLegendOpen ? 'w-32' : 'w-[180px]'} cursor-pointer`}
           onClick={() => setIsLegendOpen(!isLegendOpen)} 
           >
-            <div className='flex flex-row gap-5 items-center mx-auto justify-center'>
+            <div className='flex flex-row gap-5 items-center mx-auto justify-between'>
               <div className='flex flex-col gap-1'>
                 {isLegendOpen ? (
                   <>
@@ -146,11 +139,11 @@ const DemoMenu = ({ of, wing, margarit, fry, cosmo, brus }) => {
             </div>
           </div>
         </div>
-        
+
         <div className='flex items-center justify-center'>
           <div className='flex flex-col items-center justify-center'>
             {showSearchResults && searchQuery ? (
-              <div className="flex flex-col px-8 py-10 w-full">
+              <div className="flex flex-col px-8 py-8 w-full">
                 <div className="space-y-4">
                   {filteredMenu.map((item, index) => (
                     <MenuItem
@@ -168,7 +161,7 @@ const DemoMenu = ({ of, wing, margarit, fry, cosmo, brus }) => {
               </div>
             ) : (
               <div className="container">
-                <div className="flex flex-col px-8 py-10 w-full">
+                <div className="flex flex-col px-8 py-8 w-full">
                   <div className="space-y-4">
                     {barMenu
                       .filter(item => activeCategory === 'all' || item.category === activeCategory)
