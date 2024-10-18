@@ -92,32 +92,6 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, ipa, corona, guiness,
                             <div className='flex items-center justify-center'>
                                 <div className='flex flex-col text-center w-80'>
                                     <div className='flex flex-col gap-2 justify-center items-center lg:items-end rounded-full p-4'>
-                                        <FaRegFilePdf className='text-4xl lg:text-5xl text-secondary' />
-                                        
-                                        <h2 className='text-3xl font-bold text-center lg:text-right'
-                                        >PDF export
-                                        </h2>
-
-                                        <p className='text-lg text-center lg:text-right'
-                                        >Download your menu as a printable document
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='flex z-1 items-center justify-center'>
-                                <DemoPDF
-                                cosmo={cosmo} margarit={margarit} of={of} wing={wing} fry={fry} mule={mule} brus={brus}
-                                />
-                            </div>
-                        </div>      
-                    </div>
-
-                    <div className='flex items-center justify-center mt-32 mx-4'>
-                        <div className='flex flex-col lg:flex-row gap-32 items-center justify-center'>
-                            <div className='flex items-center justify-center'>
-                                <div className='flex flex-col text-center w-80'>
-                                    <div className='flex flex-col gap-2 justify-center items-center lg:items-end rounded-full p-4'>
                                         <HiOutlineDocumentAdd className='text-4xl lg:text-5xl text-secondary' />
                                         
                                         <h2 className='text-3xl lg:text-right font-bold'

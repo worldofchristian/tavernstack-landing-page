@@ -19,7 +19,7 @@ const UserMap = () => {
         center={centerCoordinates} 
         className='rounded-2xl z-1'
         zoom={18}
-        style={{ height: '280px', width: '380px' }} 
+        style={{ height: '280px', width: '350px' }} 
         dragging={false}
         scrollWheelZoom={false}
         >
