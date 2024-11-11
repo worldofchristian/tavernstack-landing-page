@@ -3,9 +3,9 @@ import { FaAngleDoubleRight, FaAngleDoubleUp, FaPepperHot, FaSearch, FaSeedling 
 import { LuWheatOff } from 'react-icons/lu';
 
 const MenuItem = ({ name, description, price, image, spicy, gf, vegan }) => (
-  <div className="flex flex-row items-center justify-between gap-5 w-[300px] lg:w-[520px] py-4 border-base-200">
+  <div className="flex flex-row items-center justify-between gap-5 w-[300px] lg:w-[400px] py-4 border-base-200">
     {image &&
-      <img src={image} alt={name} className="h-32 w-32 lg:h-40 lg:w-40 shadow-lg rounded-2xl object-cover" />
+      <img src={image} alt={name} className="h-32 w-32 shadow-lg rounded-2xl object-cover" />
     }
     
     <div className="flex flex-col text-right w-72">
@@ -67,7 +67,7 @@ const DemoMenu = ({ of, wing, margarit, fry, cosmo, brus }) => {
 
   return (
     <div className='flex flex-col items-center justify-center'>
-      <div className="mockup-browser border-slate-600 bg-base-300 w-[370px] lg:w-[700px] rounded-3xl">
+      <div className="mockup-browser border-slate-600 bg-base-300 w-[370px] lg:w-[600px] rounded-3xl">
         <div className="mockup-browser-toolbar"></div>
         
         <div className='flex items-center justify-center'>
