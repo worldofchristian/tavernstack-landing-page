@@ -27,15 +27,15 @@ const DemoAbout = ({ cosmo }) => {
         <div className="mockup-browser border-slate-600 bg-base-300 mb-20 w-full rounded-2xl mx-auto">
             <div className="mockup-browser-toolbar"></div>
         
-            <div className="flex flex-col items-center justify-center w-[370px] lg:w-[600px] mb-10">
+            <div className="flex flex-col items-center justify-center w-[370px] lg:w-[500px] mb-10">
                 {/* Preview */}
-                <div className="flex flex-row items-center justify-center px-4 gap-5 my-10">
+                <div className="flex flex-row items-center justify-center px-8 gap-5 my-10">
                     {photo.length > 0 && (
                         <div className='flex items-center justify-center'>
                             <div className="overflow-hidden flex w-32 lg:w-40">
                                 <img 
                                     src={photo[0]} alt={`Menu photo`} 
-                                    className="rounded-2xl w-28 h-28 lg:w-40 lg:h-40 object-cover" 
+                                    className="rounded-2xl w-32 h-32 object-cover" 
                                 />
                             </div>
                         </div>
@@ -52,7 +52,7 @@ const DemoAbout = ({ cosmo }) => {
                             {isVegan && <FaSeedling className="text-md text-green-500 inline mr-2" />}
                         </div>
 
-                        <p className="text-left mt-2 lg:mb-5 overflow-hidden lg:w-64">
+                        <p className="text-left mt-2 lg:mb-5 overflow-wrap text-left break-word overflow-hidden lg:w-64">
                             {description}
                         </p>
 
