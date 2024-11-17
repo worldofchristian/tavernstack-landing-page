@@ -26,8 +26,7 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           ui: ['react-icons', '@formspree/react'],
-          speedometer: ['react-d3-speedometer'],
-          leaflet: ['leaflet', 'react-leaflet']
+          speedometer: ['react-d3-speedometer']
         }
       }
     },

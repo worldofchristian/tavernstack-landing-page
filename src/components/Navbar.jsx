@@ -18,22 +18,6 @@ const Navbar = ({ handleGo2Pricing, handleGo2Home }) => {
                 >
                     <li onClick={handleGo2Home} className='btn btn-ghost text-left w-full'>Home</li>
                     <li onClick={handleGo2Pricing} className='btn btn-ghost text-left w-full'>Pricing</li>
-                    {/*
-                    <li>
-                        <a
-                        href='https://demo.tavernstack.com'
-                        target='_blank'
-                        rel='noreferrer'
-                        >Demo
-                        </a>
-                    </li>
-
-                    <li>
-                        <Link to="/"
-                        >Blog
-                        </Link>
-                    </li>
-                    */}
                 </ul>
             </div>
             
