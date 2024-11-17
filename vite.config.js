@@ -24,8 +24,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          utils: ['react-d3-speedometer']
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['react-icons', '@formspree/react'],
+          speedometer: ['react-d3-speedometer'],
+          leaflet: ['leaflet', 'react-leaflet']
         }
       }
     },
