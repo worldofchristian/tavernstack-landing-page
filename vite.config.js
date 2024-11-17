@@ -21,11 +21,6 @@ export default defineConfig({
       filter: /\.(js|mjs|json|css|html)$/i,
       compressionOptions: { level: 11 }
     }),
-    visualizer({
-      open: true,
-      gzipSize: true,
-      brotliSize: true
-    })
   ],
   build: {
     rollupOptions: {
