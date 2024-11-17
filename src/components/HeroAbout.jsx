@@ -10,13 +10,10 @@ import DemoAbout from './DemoAbout';
 import Speedometer from './Speedometer';
 
 const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, brus, chescak, churro, donut, emartini, wsour, martin }) => {
-    //const options = useMemo(() => ['bars and nightclubs', 'event services', 'mixologists'], []);
-    //const [currentOption, setCurrentOption] = useState(options[0]);
-    //const [direction, setDirection] = useState(1);
     const [showMoreInfo, setShowMoreInfo] = useState(false);
     const [showMoreInfo2, setShowMoreInfo2] = useState(false);
     const [showMoreInfo3, setShowMoreInfo3] = useState(false);
-    const [currentStack, setCurrentStack] = useState(ack3);
+    const [currentStack, setCurrentStack] = useState(ack1);
     
     const aboutRef = useRef(null);
 
@@ -24,53 +21,22 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, brus, chescak, churro
       aboutRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
-    // Slider animation
-    {/*
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentOption(prevOption => {
-                const currentIndex = options.indexOf(prevOption);
-                const nextIndex = (currentIndex + 1) % options.length;
-                setDirection(1); // slide to the left
-                return options[nextIndex];
-            });
-        }, 2500); 
-
-        return () => clearInterval(interval);
-    }, [options]);
-    */}
-
     // Stack animation
     useEffect(() => {
         const sequence = [
-            { image: ack3, delay: 200 },
-            { image: ack22, delay: 500 },
-            { image: ack1, delay: 800 }
+            { image: ack3, delay: 100 },
+            { image: ack22, delay: 300 },
+            { image: ack1, delay: 500 }
         ];
 
-        sequence.forEach(({ image, delay }) => {
-            setTimeout(() => {
-                setCurrentStack(image);
-            }, delay);
-        });
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            sequence.forEach(({ image, delay }) => {
+                setTimeout(() => {
+                    setCurrentStack(image);
+                }, delay);
+            });
+        }
     }, []);
-
-    const slideVariants = {
-        enter: (direction) => ({
-          x: direction > 0 ? '20%' : '-20%',
-          opacity: 0,
-        }),
-        center: {
-          x: 0,
-          opacity: 1,
-        },
-        exit: (direction) => ({
-          x: direction > 0 ? '-20%' : '20%',
-          opacity: 0,
-        }),
-    };
-
-
 
     return (
     <>
@@ -80,28 +46,16 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, brus, chescak, churro
             <img 
                 src={currentStack} 
                 alt="Stack animation" 
+                width={128}
+                height={128}
                 className="transition-all duration-150 ease-in-out w-20 h-20 lg:w-32 lg:h-32 lg:mb-8 mb-6"
+                fetchpriority="high"
+                loading="eager"
             />
 
                 <h1 
                 className="text-3xl lg:text-6xl font-bold text-center"
                 >A website platform for<br /> <span className='gradient-text font-bold'>bars and nightclubs</span>    
-                    {/*
-                    <AnimatePresence mode="wait" custom={direction}>
-                        <motion.div
-                            key={currentOption}
-                            custom={direction}
-                            variants={slideVariants}
-                            initial="enter"
-                            animate="center"
-                            exit="exit"
-                            transition={{ duration: 0.35 }}
-                            className='mt-1 lg:mt-2'
-                        >
-                            <span className='gradient-text font-bold text-transition'> {currentOption}</span>
-                        </motion.div>
-                    </AnimatePresence>
-                    */}
                 </h1>
 
                 <p className='text-center mt-8 lg:mt-12 text-lg lg:text-2xl pl-0 ml-0 w-80 lg:w-[600px]'>
