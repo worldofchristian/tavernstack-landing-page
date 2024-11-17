@@ -10,7 +10,7 @@ export default defineConfig({
       ext: '.gz',
       threshold: 10240,
       deleteOriginFile: false,
-      filter: /\.(js|mjs|json|css|html)$/i,
+      filter: /\.(js|mjs|json|css|html|woff2)$/i,
     }),
     viteCompression({
       algorithm: 'brotliCompress',
@@ -44,7 +44,8 @@ export default defineConfig({
       mangle: {
         safari10: true
       }
-    }
+    },
+    assetsInlineLimit: 4096,
   },
   optimizeDeps: {
     include: ['react-d3-speedometer']
