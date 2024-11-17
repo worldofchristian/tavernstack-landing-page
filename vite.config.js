@@ -2,16 +2,15 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import viteCompression from 'vite-plugin-compression'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     viteCompression({
       algorithm: 'gzip',
       ext: '.gz',
-      threshold: 10240, // 10KB
+      threshold: 10240,
       deleteOriginFile: false,
-      filter: /\.(js|mjs|json|css|html)$/i, 
+      filter: /\.(js|mjs|json|css|html)$/i,
     }),
     viteCompression({
       algorithm: 'brotliCompress',
@@ -22,16 +21,32 @@ export default defineConfig({
     }),
   ],
   build: {
-    minify: 'terser',
-    sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            return id.toString().split('node_modules/')[1].split('/')[0].toString();
-          }
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          utils: ['react-d3-speedometer']
         }
+      }
+    },
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        sequences: false,
+        dead_code: true,
+        conditionals: true,
+        booleans: true,
+        unused: true,
+        if_return: true,
+        join_vars: false,
+        drop_console: false
+      },
+      mangle: {
+        safari10: true
       }
     }
   },
+  optimizeDeps: {
+    include: ['react-d3-speedometer']
+  }
 })

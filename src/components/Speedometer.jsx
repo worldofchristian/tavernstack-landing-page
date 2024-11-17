@@ -97,7 +97,7 @@ const Speedometer = () => {
                         fontSize: '16px'
                     },
                 ]}
-                valueTextFontSize={0}
+                valueTextFontSize="20"
                 textColor="transparent"
                 paddingHorizontal={0}
                 paddingVertical={0}
