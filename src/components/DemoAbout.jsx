@@ -11,7 +11,7 @@ const DemoAbout = ({ cosmo }) => {
     const [isSpicy, setIsSpicy] = useState(false);
     const [isGlutenFree, setIsGlutenFree] = useState(false);
     const [isVegan, setIsVegan] = useState(false);
-    const [activeTab, setActiveTab] = useState('images');
+    const [activeTab, setActiveTab] = useState('image');
 
     const handleFileChange = (e) => {
         const files = Array.from(e.target.files);
@@ -67,7 +67,7 @@ const DemoAbout = ({ cosmo }) => {
 
                 <div className="h-[410px]">
                 <div className='flex items-center justify-center gap-2 my-5 w-72'>
-                    {['images', 'text', 'styles'].map((tab) => (
+                    {['image', 'text', 'icons'].map((tab) => (
                         <div 
                             key={tab} 
                             value={tab}
@@ -83,40 +83,8 @@ const DemoAbout = ({ cosmo }) => {
                 </div>
 
                 {/* Images Tab */}
-                {activeTab === 'images' && (
+                {activeTab === 'image' && (
                     <div className="flex flex-col items-center justify-center w-72"> 
-                        <div className="form-control w-full">
-                            <label className="label cursor-pointer">
-                                <span className="label-text">Spicy</span>
-                                <input 
-                                    type="checkbox" 
-                                    checked={isSpicy}
-                                    onChange={(e) => setIsSpicy(e.target.checked)} 
-                                    className="checkbox checkbox-primary" 
-                                />
-                            </label>
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">Gluten Free</span>
-                                <input 
-                                    type="checkbox" 
-                                    checked={isGlutenFree}
-                                    onChange={(e) => setIsGlutenFree(e.target.checked)} 
-                                    className="checkbox checkbox-primary" 
-                                />
-                            </label>
-
-                            <label className="label cursor-pointer">
-                                <span className="label-text">Vegan</span>
-                                <input 
-                                    type="checkbox" 
-                                    checked={isVegan}
-                                    onChange={(e) => setIsVegan(e.target.checked)} 
-                                    className="checkbox checkbox-primary" 
-                                />
-                            </label>
-                        </div>
-
                         <input
                             type="file"
                             className="file-input file-input-bordered mt-5 file-input-neutral w-full rounded-2xl max-w-xs"
@@ -192,30 +160,40 @@ const DemoAbout = ({ cosmo }) => {
                 )}
 
                 {/* Styles Tab */}
-                {activeTab === 'styles' && (
-                    <div className="flex flex-col items-center lg:items-start justify-center gap-10 p-4 my-10">
+                {activeTab === 'icons' && (
+                    <div className="flex flex-col items-center lg:items-start justify-center gap-10 p-4 mb-10">
                         <div className="w-72">
-                            <div className="flex flex-col items-start justify-start">
-                                <p className="text-lg font-bold text-left">Background Color</p>
-                                <input
-                                    type="color"
-                                    className="input input-bordered w-full rounded-2xl mt-2 h-10"
-                                    value="#ffffff" // Replace with state if dynamic
-                                    onChange={(e) => {/* Handle background color change */}}
-                                />
-                            </div>
+                            <div className="form-control w-full">
+                                <label className="label cursor-pointer">
+                                    <span className="label-text">Spicy</span>
+                                    <input 
+                                        type="checkbox" 
+                                        checked={isSpicy}
+                                        onChange={(e) => setIsSpicy(e.target.checked)} 
+                                        className="checkbox checkbox-primary" 
+                                    />
+                                </label>
 
-                            <div className="flex flex-col items-start justify-start mt-4">
-                                <p className="text-lg font-bold text-left">Text Color</p>
-                                <input
-                                    type="color"
-                                    className="input input-bordered w-full rounded-2xl mt-2 h-10"
-                                    value="#000000" // Replace with state if dynamic
-                                    onChange={(e) => {/* Handle text color change */}}
-                                />
-                            </div>
+                                <label className="label cursor-pointer">
+                                    <span className="label-text">Gluten Free</span>
+                                    <input 
+                                        type="checkbox" 
+                                        checked={isGlutenFree}
+                                        onChange={(e) => setIsGlutenFree(e.target.checked)} 
+                                        className="checkbox checkbox-primary" 
+                                    />
+                                </label>
 
-                            {/* Add more style-related inputs as needed */}
+                                <label className="label cursor-pointer">
+                                    <span className="label-text">Vegan</span>
+                                    <input 
+                                        type="checkbox" 
+                                        checked={isVegan}
+                                        onChange={(e) => setIsVegan(e.target.checked)} 
+                                        className="checkbox checkbox-primary" 
+                                    />
+                                </label>
+                            </div>
                         </div>
                     </div>
                 )}

@@ -77,7 +77,7 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, brus, chescak, churro
             >
                 <div className='flex flex-col'>
                     <div className='flex flex-col lg:flex-row items-center min-h-screen mt-20 lg:mt-10 gap-10 lg:gap-32'>
-                        <div className="flex flex-col items-center lg:items-end">
+                        <div className="flex flex-col items-center lg:items-end lg:h-[420px]">
                             <FaMartiniGlass className='text-3xl lg:text-4xl text-slate-500 mb-2' />
                             
                             <h2 className='text-xl lg:text-3xl font-bold text-center mb-2'
@@ -121,7 +121,7 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, brus, chescak, churro
                     </div>
      
                     <div className='flex flex-col lg:flex-row items-center min-h-screen mt-32 lg:mt-10 gap-10 lg:gap-32'>
-                        <div className="flex flex-col items-center lg:items-end">
+                        <div className="flex flex-col items-center lg:h-[450px] lg:items-end">
                             <FaCog className='text-3xl lg:text-4xl text-slate-500 mb-2' />
                             
                             <h2 className='text-xl lg:text-3xl font-bold text-center mb-2'
