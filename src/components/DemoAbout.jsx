@@ -12,6 +12,7 @@ const DemoAbout = ({ cosmo }) => {
     const [isGlutenFree, setIsGlutenFree] = useState(false);
     const [isVegan, setIsVegan] = useState(false);
     const [activeTab, setActiveTab] = useState('image');
+    const [indicator, setIndicator] = useState('');
 
     const handleFileChange = (e) => {
         const files = Array.from(e.target.files);
@@ -32,11 +33,16 @@ const DemoAbout = ({ cosmo }) => {
                 <div className="flex flex-row items-center justify-center px-8 gap-5 my-10">
                     {photo.length > 0 && (
                         <div className='flex items-center justify-center'>
-                            <div className="overflow-hidden flex w-32 lg:w-40">
+                            <div className="relative flex w-32 lg:w-40">
                                 <img 
                                     src={photo[0]} alt={`Menu photo`} 
                                     className="rounded-2xl w-32 h-32 object-cover" 
                                 />
+                                {indicator && (
+                                    <span className="badge badge-primary absolute top-[-10px] right-[-5px]">
+                                        {indicator}
+                                    </span>
+                                )}
                             </div>
                         </div>
                     )}
@@ -57,7 +63,7 @@ const DemoAbout = ({ cosmo }) => {
                         </p>
 
                         <p className="text-left text-xl lg:text-2xl font-semibold mt-2 lg:mb-5 overflow-hidden">
-                            ${price}
+                            {price}
                         </p>
                     </div>   
                 </div>
@@ -194,6 +200,22 @@ const DemoAbout = ({ cosmo }) => {
                                     />
                                 </label>
                             </div>
+                        </div>
+
+                        <div className="flex flex-col items-start justify-start w-full">
+                            <p className="text-lg font-bold text-left mb-4">Indicator</p>
+
+                            <select 
+                                className="select select-bordered rounded-2xl w-full max-w-xs"
+                                value={indicator}
+                                onChange={(e) => setIndicator(e.target.value)}
+                            >
+                                <option value="">None</option>
+                                <option value="Popular">Popular</option>
+                                <option value="Special">Special</option>
+                                <option value="New">New</option>
+                                <option value="Sold Out">Sold Out</option>
+                            </select>
                         </div>
                     </div>
                 )}

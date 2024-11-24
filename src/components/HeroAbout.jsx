@@ -173,7 +173,7 @@ const HeroAbout = ({ cosmo, margarit, of, wing, fry, mule, brus, chescak, churro
                 >Top shelf performance<br/><span className='gradient-text font-bold'>built for you</span>
                 </h1>   
                 
-                <div className='flex flex-col items-center justify-center mt-8'>
+                <div className='flex flex-col lg:h-[450px] items-center justify-start mt-8'>
                     <p className="text-center text-lg lg:text-xl pl-0 ml-0 w-80 lg:w-96"
                     >Page speeds in the top 10% of all websites
                     </p>

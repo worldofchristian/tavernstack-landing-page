@@ -28,7 +28,7 @@ const Currency = ({ currencies, changeCurrency, selectedCurrency }) => {
 };
 
 const Pricing = () => {
-    const originalPrice = 50;
+    const originalPrice = 25;
     const currencies = [
         { code: 'CAD', flag: '🇨🇦', exchangeRate: 1 },
         { code: 'USD', flag: '🇺🇸', exchangeRate: 0.73 },
